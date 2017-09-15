@@ -1,0 +1,36 @@
+/*------------------------------------------reset------------------------------------*/
+
+
+
+/*-------------------------------------all public style-----------------------------------------*/
+body{min-height: 100vh}
+.app{ display: flex;  flex-direction: column;  min-height: 100vh;}
+.header-top{position: fixed;top:0;left: 0;width: 100%;height: 60px;background: red;z-index: 9}
+.main_box{margin-top: 60px;width: 100%;display: flex;  flex-direction: row;  flex-grow: 1;  overflow-x: hidden;background: blue;}
+.main_box .content-right{margin-left: 230px;width: 100%;}
+.main_box .fixed-left{position: fixed;width: 230px;top:0;left: 0;bottom: 0;background: yellow;margin-top: 60px;z-index: 8}
+.foot-box{height: 40px;background: #ccc;padding-left: 230px;text-align: center;line-height: 40px;/*position: fixed;bottom: 0;left: 0;width: 100%;z-index: 7*/}
+
+/*------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
