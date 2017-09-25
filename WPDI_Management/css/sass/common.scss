@@ -3,6 +3,8 @@ $HEAD-TOP:50px;
 $FLEX-LEFT:170px;
 $MAIN-COLOR:#50E297;          /*深绿*/
 $AUXILIARY-COLOR:#50E378;    /*浅绿*/
+$COLOR05:#17A769;          /*深绿*/
+$COLOR04:#28B779;          /*浅绿*/
 $COLOR01:#22262F ;          /*深灰*/
 $COLOR02:#717789;         /*浅灰*/
 $COLOR03:#464E65;       /*蓝灰*/
@@ -18,7 +20,7 @@ h3,h4,h5,p{margin: 0;}
   margin-right: 0px;
   margin-left: 0px;
 }
-
+.counter{display: inline-block}
 /*-------------------------------------all public style-----------------------------------------*/
 body{min-height: 100vh}
 .icon { width:22px;height:22px;vertical-align:text-bottom;fill: currentColor;  overflow: hidden;  }
@@ -38,24 +40,36 @@ body{min-height: 100vh}
 
 .main_box{margin-top: $HEAD-TOP;width: 100%;display: flex;  flex-direction: row;  flex-grow: 1;  overflow-x: hidden;padding: 0 10px;}
 .index{}
-.main_box .content-right{margin-left: $FLEX-LEFT;width: 100%;}
-.main_box .content-right .con-top{ overflow:hidden;width: 100%;}
-.main_box .content-right .con-top .top-box{margin: 10px;box-shadow: 1px 1px 6px 3px rgba(0,0,0,.1);width: 18%;float: left}
-.main_box .content-right .index-top h3{font-size: 26px;font-weight: bold;color: orangered;line-height: 36px;}
-.main_box .content-right .index-top h3 span{font-size: 14px;font-weight: 100}
+.main_box .content-right{margin-left: $FLEX-LEFT;width: 100%;overflow:hidden}
+.main_box .content-right .con-top{ overflow:hidden;width: 100%;display: flex;justify-content: space-between}
+.main_box .content-right .con-top .top-box{margin: 10px;box-shadow: 1px 1px 6px 3px rgba(0,0,0,.1);width: 18%;text-align: center;padding: 8px 0 0 0 ;color: #fff}
+.main_box .content-right .con-top .top-box p{height: 30px;line-height: 30px;}
+.main_box .content-right .con-top .top-box:first-child{background: #27A9E3}
+.main_box .content-right .con-top .top-box:first-child p{background: #2296C9}
+.main_box .content-right .con-top .top-box:nth-child(2){background: $COLOR04}
+.main_box .content-right .con-top .top-box:nth-child(2) p{background: $COLOR05}
+.main_box .content-right .con-top .top-box:nth-child(3){background: #FF7F50}
+.main_box .content-right .con-top .top-box:nth-child(3) p{background: orangered}
+.main_box .content-right .con-top .top-box:nth-child(4){background:#842B99 }
+.main_box .content-right .con-top .top-box:nth-child(4) p{background:#751E87 }
+.main_box .content-right .con-top .top-box:last-child{background: #FFB749}
+.main_box .content-right .con-top .top-box:last-child p{background:#DA9629}
+.main_box .content-right .index-top h3{font-size: 20px;font-weight: bold;line-height: 36px;}
+
 .main_box .content-right .index-top .summary{width: 100%;flex-wrap: wrap;
   @include flex}
 .main_box .content-right .index-top .summary p{line-height: 20px;}
 
-.main_box .content-right .con-box{margin-top: 20px;padding: 10px;}
+.main_box .content-right .con-box{margin-top: 20px;padding: 10px;height: 700px}
 .main_box .con-box .chart-bar h3{text-align: center;font-size: 18px;line-height: 36px;font-weight: bold}
 .main_box .con-box .chart-pia{margin : 50px 0;}
 .hello{width: 100%;position: relative}
-.box{position: absolute;width: 90%;height: 500px;transition:all 0.8s;left: 0;right: 0;margin: auto;margin-bottom: 50px;box-shadow:-1px 1px 10px 1px rgba(0, 0, 0, 0.2)}
+.box{position: absolute;width: 90%;height: 500px;transition:all 0.8s;left: 0;right: 0;margin: auto;margin-bottom: 50px;background: #f2f2f2}
+.box canvas{cursor: pointer}
 .box p{font-size: 60px;color: #333;text-align: center}
 .box h3{text-align: center;line-height: 30px;}
 .activ p{display: none}
-.box.activ{box-shadow: none}
+.box.activ{background: none}
 
 .main_box .fixed-left{position: fixed;width:$FLEX-LEFT;top:0;left: 0;bottom: 0;background: #2E3440;margin-top:$HEAD-TOP;z-index: 8}
 .main_box .fixed-left ul{width: 100%}

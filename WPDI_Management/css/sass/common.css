@@ -1,10 +1,12 @@
 @charset "UTF-8";
 /*----------------------------------------scoped---------------------------------------*/
-/*娣辩豢*/
-/*娴呯豢*/
-/*娣辩伆*/
-/*娴呯伆*/
-/*钃濈伆*/
+/*µ╖▒τ╗┐*/
+/*µ╡àτ╗┐*/
+/*µ╖▒τ╗┐*/
+/*µ╡àτ╗┐*/
+/*µ╖▒τü░*/
+/*µ╡àτü░*/
+/*Φô¥τü░*/
 /*------------------------------------------reset------------------------------------*/
 body {
   min-width: 1050px; }
@@ -20,6 +22,9 @@ h3, h4, h5, p {
 .row {
   margin-right: 0px;
   margin-left: 0px; }
+
+.counter {
+  display: inline-block; }
 
 /*-------------------------------------all public style-----------------------------------------*/
 body {
@@ -103,27 +108,61 @@ body {
 
 .main_box .content-right {
   margin-left: 170px;
-  width: 100%; }
+  width: 100%;
+  overflow: hidden; }
 
 .main_box .content-right .con-top {
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  justify-content: space-between; }
 
 .main_box .content-right .con-top .top-box {
   margin: 10px;
   box-shadow: 1px 1px 6px 3px rgba(0, 0, 0, 0.1);
   width: 18%;
-  float: left; }
+  text-align: center;
+  padding: 8px 0 0 0;
+  color: #fff; }
+
+.main_box .content-right .con-top .top-box p {
+  height: 30px;
+  line-height: 30px; }
+
+.main_box .content-right .con-top .top-box:first-child {
+  background: #27A9E3; }
+
+.main_box .content-right .con-top .top-box:first-child p {
+  background: #2296C9; }
+
+.main_box .content-right .con-top .top-box:nth-child(2) {
+  background: #28B779; }
+
+.main_box .content-right .con-top .top-box:nth-child(2) p {
+  background: #17A769; }
+
+.main_box .content-right .con-top .top-box:nth-child(3) {
+  background: #FF7F50; }
+
+.main_box .content-right .con-top .top-box:nth-child(3) p {
+  background: orangered; }
+
+.main_box .content-right .con-top .top-box:nth-child(4) {
+  background: #842B99; }
+
+.main_box .content-right .con-top .top-box:nth-child(4) p {
+  background: #751E87; }
+
+.main_box .content-right .con-top .top-box:last-child {
+  background: #FFB749; }
+
+.main_box .content-right .con-top .top-box:last-child p {
+  background: #DA9629; }
 
 .main_box .content-right .index-top h3 {
-  font-size: 26px;
+  font-size: 20px;
   font-weight: bold;
-  color: orangered;
   line-height: 36px; }
-
-.main_box .content-right .index-top h3 span {
-  font-size: 14px;
-  font-weight: 100; }
 
 .main_box .content-right .index-top .summary {
   width: 100%;
@@ -137,7 +176,8 @@ body {
 
 .main_box .content-right .con-box {
   margin-top: 20px;
-  padding: 10px; }
+  padding: 10px;
+  height: 700px; }
 
 .main_box .con-box .chart-bar h3 {
   text-align: center;
@@ -161,7 +201,10 @@ body {
   right: 0;
   margin: auto;
   margin-bottom: 50px;
-  box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.2); }
+  background: #f2f2f2; }
+
+.box canvas {
+  cursor: pointer; }
 
 .box p {
   font-size: 60px;
@@ -176,7 +219,7 @@ body {
   display: none; }
 
 .box.activ {
-  box-shadow: none; }
+  background: none; }
 
 .main_box .fixed-left {
   position: fixed;

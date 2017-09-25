@@ -142,47 +142,52 @@
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chanzhifenpei"></use>
                         </svg>
-                        <h3>本年度项目</h3>
-                        <p>123456</p>
+                        <h3><span class="counter">52365</span></h3>
+                        <p>本年度项目</p>
                     </div>
                     <div class="top-box">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chanzhifenpei"></use>
                         </svg>
-                        <h3>本年合同</h3>
-                        <p>1111111.111111万</p>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年合同</p>
                     </div>
                     <div class="top-box">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chanzhifenpei"></use>
                         </svg>
-                        <h3>本年到款</h3>
-                        <p>52365.3265万</p>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年到款</p>
                     </div>
                     <div class="top-box">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chanzhifenpei"></use>
                         </svg>
-                        <h3>本年结转</h3>
-                        <p>52365.3265万</p>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年结转</p>
                     </div>
                     <div class="top-box">
                         <svg class="icon" aria-hidden="true">
                             <use xlink:href="#icon-chanzhifenpei"></use>
                         </svg>
-                        <h3>到款总额</h3>
-                        <p>52365.3265万</p>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>到款总额</p>
                     </div>
                 </div><!--top-->
+                <script src="js/jquery.waypoints.min.js"></script>
+                <script type="text/javascript" src="js/jquery.countup.min.js"></script>
+                <script type="text/javascript">
+                    $('.counter').countUp();
+                </script>
 
                 <div class="con-box">
                     <div class="hello">
-                        <div class="box box1" style="transform: translate(-40%,-38%) scale(.2)" onclick="choose(1)">
+                        <div class="box box1" style="transform: translate(-42%,-38%) scale(.2)" onclick="choose(1)">
                             <h3>本年度项目情况</h3>
                             <div id="mainTWO" style="width:100%;height:100%;"></div>
                             <p>本年度项目情况</p>
                         </div>
-                        <div class="box box2" style="transform: translate(-20%,-38%) scale(.2)"  onclick="choose(2)">
+                        <div class="box box2" style="transform: translate(-21%,-38%) scale(.2)"  onclick="choose(2)">
                             <div id="mainTHREE" style="width:100%;height:100%;"></div>
                             <p>项目结转情况</p>
                         </div>
@@ -190,11 +195,11 @@
                             <div id="mainFOUR" style="width:90%;height:100%;margin: auto"></div>
                             <p>同期合同总额比较</p>
                         </div>
-                        <div class="box box3" style="transform: translate(20%,-38%) scale(.2)"  onclick="choose(4)">
+                        <div class="box box3" style="transform: translate(21%,-38%) scale(.2)"  onclick="choose(4)">
                             <div id="mainFIVE" style="width:90%;height:100%;margin: auto"></div>
                             <p>本年项目收费情况</p>
                         </div>
-                        <div class="box box3" style="transform: translate(40%,-38%) scale(.2)"  onclick="choose(5)">
+                        <div class="box box3" style="transform: translate(42%,-38%) scale(.2)"  onclick="choose(5)">
                             <div id="mainSIX" style="width:90%;height:100%;margin: auto"></div>
                             <p>项目收费比例</p>
                         </div>
