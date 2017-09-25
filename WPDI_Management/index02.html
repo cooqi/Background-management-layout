@@ -43,10 +43,10 @@
             </script>
         </header><!--header-->
 
-        <div class="main_box">
+        <div class="main_box index">
             <div class="fixed-left">
                 <ul>
-                    <li>
+                    <li class="on">
                         <a href="">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shouye"></use>
@@ -54,7 +54,7 @@
                             首页
                         </a>
                     </li>
-                    <li class="on">
+                    <li>
                         <a href="">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-xiangmu"></use>
@@ -138,48 +138,115 @@
             </div><!--fixed left-->
             <div class="content-right">
                 <div class="con-top index-top">
-                    <h3>2017</h3>
-                    <p>本年项目333项，本年合同1111111.111111万，到款总额：52365.3265万（本年17562.3625，结转45632.3265）</p>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3>本年度项目</h3>
+                        <p>123456</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3>本年合同</h3>
+                        <p>1111111.111111万</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3>本年到款</h3>
+                        <p>52365.3265万</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3>本年结转</h3>
+                        <p>52365.3265万</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3>到款总额</h3>
+                        <p>52365.3265万</p>
+                    </div>
                 </div><!--top-->
 
                 <div class="con-box">
-                    <div class="row chart-bar">
-                        <div class="col-sm-12 col-lg-6">
+                    <div class="hello">
+                        <div class="box box1" style="transform: translate(-40%,-38%) scale(.2)" onclick="choose(1)">
                             <h3>本年度项目情况</h3>
-                            <div id="mainONE" style="width:100%;height:400px;"></div>
+                            <div id="mainTWO" style="width:100%;height:100%;"></div>
+                            <p>本年度项目情况</p>
                         </div>
-                        <div class="col-sm-12 col-lg-6">
+                        <div class="box box2" style="transform: translate(-20%,-38%) scale(.2)"  onclick="choose(2)">
+                            <div id="mainTHREE" style="width:100%;height:100%;"></div>
+                            <p>项目结转情况</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(0,-38%) scale(.2)"  onclick="choose(3)">
+                            <div id="mainFOUR" style="width:90%;height:100%;margin: auto"></div>
+                            <p>同期合同总额比较</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(20%,-38%) scale(.2)"  onclick="choose(4)">
+                            <div id="mainFIVE" style="width:90%;height:100%;margin: auto"></div>
+                            <p>本年项目收费情况</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(40%,-38%) scale(.2)"  onclick="choose(5)">
+                            <div id="mainSIX" style="width:90%;height:100%;margin: auto"></div>
+                            <p>项目收费比例</p>
+                        </div>
+                        <div class="box box4 activ" style="transform: translate(0,30%) scale(1)"  onclick="choose(6)">
                             <h3>项目结转情况</h3>
-                            <div id="mainTWO" style="width:100%;height:400px;"></div>
+                            <div id="mainONE" style="width:90%;height:100%;margin: auto"></div>
+                            <p>项目数量情况</p>
                         </div>
                     </div>
 
-                    <div class="row chart-pia">
-                        <div class="col-sm-12 col-lg-6">
-                            <div id="mainTHREE" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6">
-                            <div id="mainFOUR" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                    </div>
-                    <div class="row chart-pia">
-                        <div class="col-sm-12 col-md-6">
-                            <div id="mainFIVE" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div id="mainSIX" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                    </div>
                 </div>
 
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
+
 
         <script>
+            //切换图表
+                var items = document.querySelectorAll('.box');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].dataset.order = i;
+                }
+                function choose(clickIndex) {
+                    //获取当前显示的元素
+                    var activeItem = document.querySelector('.activ');
+                    //获取当前显示元素的data-order
+                    var activeIndex = activeItem.dataset.order;
+                    //获取当前点击元素
+                    var clickItem = items[clickIndex - 1];
+
+                    //判断当前点击的元素的id和当前显示元素的data-order是否相等
+                    if (activeIndex === clickIndex) {
+                        return
+                    }
+                    //更换样式
+                    activeItem.classList.remove('activ');
+                    clickItem.classList.add('activ');
+                    _setStyle(clickItem, activeItem)
+                    return false
+                }
+                function _setStyle(el1, el2) {
+                    //更换transform样式
+                    var transform1 = el1.style.transform;
+                    var transform2 = el2.style.transform;
+                    el1.style.transform = transform2;
+                    el2.style.transform = transform1;
+                }
+
+
+
+
             // 基于准备好的dom，初始化echarts实例
             var myChart = echarts.init(document.getElementById('mainONE'));
             var myChart02 = echarts.init(document.getElementById('mainTWO'));
@@ -196,7 +263,7 @@
                     axisPointer: {
                         type: 'cross',
                         crossStyle: {
-                            color: '#999'
+                            color: '#fff'
                         }
                     }
                 },
@@ -240,20 +307,36 @@
                     }
                 ],
                 series: [
+
                     {
                         name:'2017年项目新增项目合同总额',
                         type:'bar',
-                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     },
                     {
                         name:'2017年结转项目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     },
                     {
                         name:'2017年新增目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     }
                 ]
             };
@@ -512,7 +595,8 @@
                     text: '项目收费比例',
                     textStyle: {
                         color: '#235894'
-                    }
+                    },
+                    x:'center'
                 },
                 tooltip: {
                     trigger: 'item',
@@ -579,6 +663,7 @@
             myChart04.setOption(option04);
             myChart05.setOption(option05);
             myChart06.setOption(option06);
+
         </script>
     </div>
 </body>
