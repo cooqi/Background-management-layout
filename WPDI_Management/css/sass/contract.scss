@@ -1,0 +1,36 @@
+body{font-family: "Microsoft YaHei"}
+ul,li{list-style: none;padding: 0;margin: 0;}
+h1,h2,h3,h4,h5,p{margin: 0;}
+*:focus,input{outline: none}
+
+$width:96%;
+
+.input, .flex-input{border-width: 0 0 1px 0px;border-style: solid;border-color: #ccc;height: 24px;background: none}
+.contract{width: $width;margin: auto}
+.contract h1{text-align: center;line-height: 100px;font-size: 30px}
+.contract h2{font-size: 24px;text-align: center;line-height: 50px;}
+.contract .contract-top{text-align: center;margin-bottom: 50px;}
+.contract table.comm{width: $width;margin: auto;}
+.contract table.comm tr td{font-size: 18px;padding: 10px 0}
+.contract table.comm tr td:first-child{text-align: right;width: 150px;}
+.contract table.comm tr td:last-child{text-align: left;padding-left: 20px}
+.contract .content{width: 100%;margin-bottom: 50px}
+.contract .content table.comm{margin-bottom: 50px}
+.contract .content .box{font-size: 16px;margin-bottom: 50px}
+.contract .content p{text-indent: 32px;line-height: 200%;margin-bottom: 10px;}
+.contract .content .box ol li{line-height: 200%;margin-bottom: 15px;}
+.contract .content .box ol li>h3{font-size: 18px;font-weight: bold}
+.contract .signature{width: 80%;margin: 20px auto}
+.contract .signature table{width: 100%}
+.contract .signature td{width: 50%;padding:  20px 0}
+
+
+
+
+
+
+
+
+
+
+

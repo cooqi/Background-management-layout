@@ -23,10 +23,11 @@
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -87,7 +88,7 @@
                             借支
                         </a>
                     </li>
-                    <li>
+                    <li class="on">
                         <a href="charge.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shoufei"></use>
@@ -132,19 +133,52 @@
             <div class="content-right">
                 <div class="other-top">
                     <div class="top-title">
-                        <p>栏目名称</p>
+                        <p>收费</p>
                     </div>
                 </div><!--top-->
 
-                <div class="con-box">
+                <div class="con-box lend-box">
 
+                        <table class="table">
+                            <tbody>
+                            <tr>
+                                <td>业号：<input type="text" class="form-control"></td>
+                                <td>项目名称：<input type="text" class="form-control"></td>
+                                <td>部门：<input type="text" class="form-control"></td>
+                                <td>项目负责人：<input type="text" class="form-control"></td>
+                                <td>委托单位：<input type="text" class="form-control"></td>
+                                <td>合同金额：<input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>收费金额：<input type="text" class="form-control"></td>
+                                <td>所属：
+                                    <select class="form-control">
+                                        <option>总院</option>
+                                        <option>公司</option>
+                                    </select>
+                                </td>
+                                <td>项目类型：<input type="text" class="form-control"></td>
+                                <td colspan="3">备注：<input type="text" class="form-control"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    <button type="button" class="btn btn-primary revise">确认</button>
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
+        <script>
+            $(function () {
+                $(".regular-radio").change(function() {
+                    if($(this).val()==2){
+                        $('#type-file').hide()
+                    }
+                    if($(this).val()==1){
+                        $('#type-file').show()
+                    }
+                });
+            });
+        </script>
     </div>
 </body>
 </html>

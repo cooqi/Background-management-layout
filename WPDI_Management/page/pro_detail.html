@@ -13,7 +13,7 @@
     <div class="app">
         <header class="header-top">
             <div class="logo">
-                <p>WPDI经营管理系统</p>
+                <p>WPDC经营管理系统</p>
             </div>
             <div class="user-state">
                 <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息">
@@ -23,10 +23,11 @@
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -40,7 +41,7 @@
             <div class="fixed-left">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="../">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shouye"></use>
                             </svg>
@@ -48,7 +49,7 @@
                         </a>
                     </li>
                     <li class="on">
-                        <a href="">
+                        <a href="pro_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-xiangmu"></use>
                             </svg>
@@ -56,7 +57,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="business_account.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
@@ -64,7 +65,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="contract.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-hetong"></use>
                             </svg>
@@ -72,7 +73,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="external_assistance.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-waixieziyuan"></use>
                             </svg>
@@ -80,7 +81,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="lend_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-jiezhishenqing"></use>
                             </svg>
@@ -88,7 +89,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="charge.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shoufei"></use>
                             </svg>
@@ -132,30 +133,122 @@
             <div class="content-right">
                 <div class="other-top pro_detail_name other-title">
                         <h3>测试数据这里是项目名称</h3>
-                        <p>WPID-12345678932</p>
+                        <p>WPDC-12345678932</p>
                 </div><!--top-->
 
                 <div class="con-box pro-detail">
                     <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="4">基本信息</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         <tr>
-                            <td width="150">时间：2017-09-02</td>
-                            <td width="200">金额：123654.22（万元）</td>
-                            <td width="300">委托单位：委托单位</td>
-                            <td width="150">项目负责人：某某</td>
-                            <td>附件</td>
+                            <td>金额：123654.22（万元）</td>
+                            <td>委托单位：委托单位</td>
+                            <td>项目类别：某某</td>
+                            <td>承担部门：承担部门</td>
+                        </tr>
+                        <tr>
+                            <td>下达时间：2017-09-02</td>
+                            <td>要求完成时间：2017-11-11</td>
+                            <td colspan="2">备注：备注</td>
                         </tr>
                         </tbody>
                     </table>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="4">合同信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>合同登记时间：2017-09-02</td>
+                            <td>合同状态：进行中</td>
+                            <td>合同附件：合同附件</td>
+                            <td>合同说明：备注</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="4">外协信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>外协类型：1</td>
+                            <td>外协金额：22222（万元）</td>
+                            <td>外协单位：*******外协单位</td>
+                            <td>外协支付比例：20%</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="4">费用情况</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="50%" style="padding: 0 5px">
+                                <table class="table" style="margin-bottom: 0">
+                                    <thead>
+                                    <tr>
+                                        <th>收费金额</th>
+                                        <th>付款单位</th>
+                                        <th>收费日期</th>
+                                        <th>所属</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>123654（万元）</td>
+                                        <td>********单位</td>
+                                        <td>2017-11-11</td>
+                                        <td>总院</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                            <td style="padding: 0 5px">
+                                <table class="table" style="margin-bottom: 0">
+                                    <thead>
+                                    <tr>
+                                        <th>借支金额</th>
+                                        <th>开具发票单位</th>
+                                        <th>借支日期</th>
+                                        <th>所属</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>123654（万元）</td>
+                                        <td>********单位</td>
+                                        <td>2017-11-11</td>
+                                        <td>公司</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <div class="pro_cast_total">
+                                    <p>合同金额<span>65.23</span>（万元）</p>
+                                    <p>已收费金额<span>11</span>（万元）</p>
+                                    <p>欠费金额<span>54.23</span>（万元）</p>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    
 
-                    <div class="record">
-                        <h3>修改记录</h3>
-                        <div class="record-list">
-                            <p>2017-9-20，某某，修改了委托单位</p>
-                            <p>2017-9-20，某某，修改了委托单位</p>
-                            <p>2017-9-20，某某，修改了委托单位</p>
-                        </div>
-                    </div>
 
                 </div>
             </div><!--content right-->

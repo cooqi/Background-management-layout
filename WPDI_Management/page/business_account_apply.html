@@ -13,7 +13,7 @@
     <div class="app">
         <header class="header-top">
             <div class="logo">
-                <p>WPDI经营管理系统</p>
+                <p>WPDC经营管理系统</p>
             </div>
             <div class="user-state">
                 <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息">
@@ -23,10 +23,11 @@
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -46,7 +47,7 @@
             <div class="fixed-left">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="../">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shouye"></use>
                             </svg>
@@ -54,7 +55,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="pro_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-xiangmu"></use>
                             </svg>
@@ -62,7 +63,7 @@
                         </a>
                     </li>
                     <li class="on">
-                        <a href="">
+                        <a href="business_account.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
@@ -70,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="contract.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-hetong"></use>
                             </svg>
@@ -78,7 +79,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="external_assistance.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-waixieziyuan"></use>
                             </svg>
@@ -86,7 +87,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="lend_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-jiezhishenqing"></use>
                             </svg>
@@ -94,7 +95,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="charge.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shoufei"></use>
                             </svg>
@@ -147,15 +148,36 @@
                         <tbody>
                         <tr>
                             <td>申请人：<input type="text" value="申请人" class="form-control"></td>
-                            <td>部门：<input type="text" value="2017-09-20" class="form-control" disabled></td>
-                            <td>项目名称：<input type="text" value="2017-09-20" class="form-control" ></td>
-                            <td>委托单位：<input type="text" value="2017-09-20" class="form-control" ></td>
-                            <td>项目负责人：<input type="text" value="2017-09-20" class="form-control" ></td>
-                            <td>时间：<input type="text" value="2017-09-20" class="form-control" disabled></td>
+                            <td>部门：
+                                <select class="form-control">
+                                    <option>部门1</option>
+                                    <option>部门2</option>
+                                    <option>部门3</option>
+                                    <option>部门4</option>
+                                    <option>部门5</option>
+                                </select>
+                            </td>
+                            <td>项目名称：<input type="text" value="项目名称" class="form-control" ></td>
+                            <td>委托单位：<input type="text" value="委托单位" class="form-control" ></td>
+                            <td>项目类别：<input type="text" value="项目类别" class="form-control"></td>
+                            <td>金额：<input type="text" value="金额" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td>要求完成时间：<input type="text" value="2017-09-08" class="form-control"></td>
+                            <td>建设单位：<input type="text" value="建设单位" class="form-control"></td>
+                            <td>建设单位联系人：<input type="text" value="联系人" class="form-control" ></td>
+                            <td>联系方式：<input type="text" value="联系方式" class="form-control" ></td>
+                            <td>兴建地址：<input type="text" value="兴建地址" class="form-control" ></td>
+                            <td>规模：<input type="text" value="规模" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">备注：<input type="text" value="备注" class="form-control"></td>
+                            <td>登记时间：<input type="text" value="时间" class="form-control" disabled></td>
                         </tr>
                         </tbody>
                     </table>
                     <button type="button" class="btn btn-primary revise">确认申请</button>
+
                 </div>
             </div><!--content right-->
         </div><!--main_box-->

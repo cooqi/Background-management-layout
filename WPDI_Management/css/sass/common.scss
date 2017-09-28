@@ -1,10 +1,12 @@
 /*----------------------------------------scoped---------------------------------------*/
 $HEAD-TOP:50px;
 $FLEX-LEFT:170px;
-$MAIN-COLOR:#50E297;          /*深绿*/
-$AUXILIARY-COLOR:#50E378;    /*浅绿*/
-$COLOR05:#17A769;          /*深绿*/
-$COLOR04:#28B779;          /*浅绿*/
+/*$MAIN-COLOR:#50E297;          !*深绿*!
+$AUXILIARY-COLOR:#50E378;    !*浅绿*!*/
+$MAIN-COLOR:#004990;          /*深绿*/
+$AUXILIARY-COLOR:#037df3;    /*浅绿*/
+$COLOR05:#53c68b;          /*深绿*/
+$COLOR04:#50E297;          /*浅绿*/
 $COLOR01:#22262F ;          /*深灰*/
 $COLOR02:#717789;         /*浅灰*/
 $COLOR03:#464E65;       /*蓝灰*/
@@ -13,7 +15,7 @@ $COLOR03:#464E65;       /*蓝灰*/
   display:flex;flex-direction: row;justify-content: space-between;
 }
 /*------------------------------------------reset------------------------------------*/
-body{min-width: 1050px;}
+body{min-width: 1050px;font-family: "Microsoft YaHei"}
 ul,li{list-style: none;padding: 0;margin: 0;}
 h3,h4,h5,p{margin: 0;}
 .row {
@@ -30,27 +32,34 @@ body{min-height: 100vh}
   @include flex}
 .header-top .logo{font-size: 16px;font-weight: bold;width:$FLEX-LEFT;background: $MAIN-COLOR;text-align: center;border-radius: 0 10px 0 0 }
 .header-top .user-state{display: flex;flex-direction: row}
-.header-top .user-state p{margin-left: 20px;}
+.header-top .user-state p{margin-left: 20px;cursor: pointer}
 .header-top .user-state p:hover{color: $MAIN-COLOR}
 .header-top .user-state p.user-name i{background: url("../../img/icon_user.png") no-repeat;}
 .header-top .user-state p.user-logout i{background: url("../../img/icon_logout.png") no-repeat;}
-.header-top .user-state p.user-msg{position: relative}
+.header-top .user-state p.user-msg{position: relative;animation: msg 1s  infinite ease-in-out}
 .header-top .user-state p.user-msg .icon,.header-top .user-state p.user-logout .icon{vertical-align: middle}
 .header-top .user-state p.user-msg span{position: absolute;content: '';width: 10px;height: 10px;background: red;border-radius: 10px;right: -3px;bottom: 11px}
+@keyframes  msg{
+  0%{opacity: 1}
+  50%{opacity: 0}
+  100%{opacity: 0}
+}
+
 
 .main_box{margin-top: $HEAD-TOP;width: 100%;display: flex;  flex-direction: row;  flex-grow: 1;  overflow-x: hidden;padding: 0 10px;}
-.index{}
-.main_box .content-right{margin-left: $FLEX-LEFT;width: 100%;overflow:hidden}
-.main_box .content-right .con-top{ overflow:hidden;width: 100%;display: flex;justify-content: space-between}
+.index{background: #f2f2f2}
+.main_box .content-right{margin-left: $FLEX-LEFT;width: 100%;overflow:hidden;}
+.index .content-right{margin-top: 20px}
+.main_box .content-right .con-top{ overflow:hidden;width: 100%;display: flex;justify-content: space-between;background: #fff}
 .main_box .content-right .con-top .top-box{margin: 10px;box-shadow: 1px 1px 6px 3px rgba(0,0,0,.1);width: 18%;text-align: center;padding: 8px 0 0 0 ;color: #fff}
-.main_box .content-right .con-top .top-box p{height: 30px;line-height: 30px;}
-.main_box .content-right .con-top .top-box:first-child{background: #27A9E3}
+.main_box .content-right .con-top .top-box p{height: 30px;line-height: 30px;opacity: .3;color: #fff}
+.main_box .content-right .con-top .top-box:first-child{background: #65B8EA}
 .main_box .content-right .con-top .top-box:first-child p{background: #2296C9}
 .main_box .content-right .con-top .top-box:nth-child(2){background: $COLOR04}
 .main_box .content-right .con-top .top-box:nth-child(2) p{background: $COLOR05}
-.main_box .content-right .con-top .top-box:nth-child(3){background: #FF7F50}
+.main_box .content-right .con-top .top-box:nth-child(3){background: #FF8362}
 .main_box .content-right .con-top .top-box:nth-child(3) p{background: orangered}
-.main_box .content-right .con-top .top-box:nth-child(4){background:#842B99 }
+.main_box .content-right .con-top .top-box:nth-child(4){background:#BEAADF }
 .main_box .content-right .con-top .top-box:nth-child(4) p{background:#751E87 }
 .main_box .content-right .con-top .top-box:last-child{background: #FFB749}
 .main_box .content-right .con-top .top-box:last-child p{background:#DA9629}
@@ -60,7 +69,7 @@ body{min-height: 100vh}
   @include flex}
 .main_box .content-right .index-top .summary p{line-height: 20px;}
 
-.main_box .content-right .con-box{margin-top: 20px;padding: 10px;height: 700px}
+.main_box .content-right .con-box{margin-top: 20px;padding: 10px;min-height: 700px;background: #fff;}
 .main_box .con-box .chart-bar h3{text-align: center;font-size: 18px;line-height: 36px;font-weight: bold}
 .main_box .con-box .chart-pia{margin : 50px 0;}
 .hello{width: 100%;position: relative}
@@ -76,7 +85,7 @@ body{min-height: 100vh}
 .main_box .fixed-left ul li{text-align: center;line-height: 60px;}
 .main_box .fixed-left ul li a{color: $COLOR02;display: block}
 .main_box .fixed-left ul li:hover,.main_box .fixed-left ul li.on{background:$COLOR01 ;border-left: 3px solid $AUXILIARY-COLOR;}
-.main_box .fixed-left ul li a:hover,.main_box .fixed-left ul li.on a{color:$MAIN-COLOR;text-decoration: none;}
+.main_box .fixed-left ul li a:hover,.main_box .fixed-left ul li.on a{color:$AUXILIARY-COLOR;text-decoration: none;}
 
 
 
@@ -85,10 +94,10 @@ body{min-height: 100vh}
 
 /*------------------------------------------------------------------------------*/
 
-.main_box .content-right .other-top{border-bottom: 2px solid dodgerblue;padding-bottom: 15px;}
+.main_box .content-right .other-top{border-bottom: 2px solid dodgerblue;}
 .main_box .content-right .other-top .top-title{line-height: 58px;font-size: 20px ;font-weight: bold;}
-.main_box .content-right .other-top .pro_top_box{ @include flex; flex-wrap: wrap}
-.main_box .content-right .other-top .pro-list-select{margin-top: 10px;float: right}
+.main_box .content-right .other-top .pro_top_box{ @include flex; flex-wrap: wrap;margin-bottom: 10px;}
+.main_box .content-right .other-top .pro-list-select{margin-top: 12px;float: right}
 .main_box .content-right .pro-lists tr:hover td{background: #ccc;}
 .main_box .content-right .pro-lists td{text-align: center;vertical-align: middle}
 .main_box .content-right .pro-lists th{text-align: center}
@@ -98,9 +107,10 @@ body{min-height: 100vh}
 
 .main_box .content-right .other-top .pro-play{margin-top: 10px;}
 
-.main_box .content-right .other-title h3{line-height: 50px;font-size: 18px;font-weight: bold}
+.main_box .content-right .pro-detail{color: #666}
+.main_box .content-right .other-title h3{line-height: 30px;font-size: 18px;font-weight: bold}
 .main_box .content-right .pro_detail_name p{font-size: 14px;line-height: 24px;}
-.main_box .content-right .pro-detail table td{height: 50px;vertical-align: middle}
+.main_box .content-right .pro-detail table td{vertical-align: middle}
 .main_box .content-right .pro-detail table img{height: 100%}
 .main_box .content-right .pro_detail_name{ margin-top: 15px;}
 
@@ -113,4 +123,30 @@ body{min-height: 100vh}
 .main_box .content-right .pro-detail .record-list p:first-child:after{background: yellow}
 .main_box .content-right .revise{margin: auto;display: block;width: 250px}
 
-.main_box .content-right .pro-add-title h3{}
+.main_box .content-right .pro-detail .pro_cast_total{display: flex;justify-content: flex-start;flex-wrap: wrap;}
+.main_box .content-right .pro-detail .pro_cast_total p{margin-right: 30px;}
+.main_box .content-right .pro-detail .pro_cast_total p span{color: $MAIN-COLOR;font-size: 18px;font-weight: bold}
+.main_box .content-right .pro-detail table th{background: #eee}
+.main_box .content-right .pro-detail table table th{background: none}
+
+.lend-top{display: flex;justify-content: space-between;flex-wrap: wrap}
+.main_box .content-right .lend-total{height: 50px;line-height: 50px;background: rgba(89,167,243,.1);padding-left: 35px;border-radius: 30px}
+.main_box .content-right .lend-total span{color: #d55027;font-size: 18px;font-weight: bold}
+
+.lend-box label{display: inline}
+.lend-box .regular-radio {  display: none;  }
+.lend-box .regular-radio + label {  -webkit-appearance: none;  background-color: #fafafa;  border: 1px solid #cacece;  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);  padding: 9px;  display: inline-block;  position: relative;}
+.lend-box .regular-radio:checked + label:after {content: '\2714'; font-size: 14px;  position: absolute;  top: 0px;  left: 3px;  color: #99a1a7;  }
+.lend-box .regular-radio:checked + label {  background-color: #e9ecee;  color: #99a1a7;  border: 1px solid #adb8c0;  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);  }
+.lend-box .regular-radio + label:active,.lend-box  .regular-radio:checked + label:active {  box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);  }
+.lend-box .type{margin-bottom: 15px;}
+.lend-box .type span{display: inline-block;border-right: 1px dashed #ccc;width:100px;padding-left: 15px}
+.lend-box .type span:last-child{border: 0}
+
+.msg-note li{padding-left: 25px;}
+.msg-note .no-ready{position: relative}
+.msg-note .no-ready:before{content:'';position:absolute;width: 8px;height: 8px;background: red;border-radius: 8px;left: 5px;top:0;bottom: 0;margin: auto;}
+
+
+
+

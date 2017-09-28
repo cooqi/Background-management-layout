@@ -23,10 +23,11 @@
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -63,7 +64,7 @@
                             业号
                         </a>
                     </li>
-                    <li>
+                    <li class="on">
                         <a href="contract.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-hetong"></use>
@@ -130,21 +131,65 @@
                 </ul>
             </div><!--fixed left-->
             <div class="content-right">
-                <div class="other-top">
-                    <div class="top-title">
-                        <p>栏目名称</p>
-                    </div>
+                <div class="other-top pro_detail_name other-title">
+                        <h3>测试数据这里是项目名称</h3>
                 </div><!--top-->
 
-                <div class="con-box">
+                <div class="con-box pro-detail">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="5">合同基本信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>业号：WPDC-12345678932</td>
+                            <td>时间：2017-09-02</td>
+                            <td>金额：123654.22（万元）</td>
+                            <td>所属：总院</td>
+                            <td>一式几份：3</td>
+
+                        </tr>
+                        <tr>
+                            <td>甲方联系人：某某某1</td>
+                            <td>甲方联系人电话：13078945632</td>
+                            <td>甲方通讯地址：某某地址</td>
+                            <td colspan="3">附件：备注</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th colspan="4">项目基本信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>金额：123654.22（万元）</td>
+                            <td>委托单位：委托单位</td>
+                            <td>项目类别：某某</td>
+                            <td>承担部门：承担部门</td>
+                        </tr>
+                        <tr>
+                            <td>下达时间：2017-09-02</td>
+                            <td>要求完成时间：2017-11-11</td>
+                            <td colspan="2">备注：备注</td>
+                        </tr>
+                        </tbody>
+                    </table>
 
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
     </div>
+
+
+
+    <script>
+
+    </script>
 </body>
 </html>
