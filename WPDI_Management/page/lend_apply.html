@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/sass/common.css">
     <script src="../js/jquery-2.1.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
 <body class="app">
     <div class="app">
@@ -62,6 +62,14 @@
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li>
@@ -133,76 +141,208 @@
             <div class="content-right">
                 <div class="other-top">
                     <div class="top-title">
-                        <p>借发票</p>
+                        <p>借发票登记</p>
                     </div>
                 </div><!--top-->
 
-                <div class="con-box lend-box">
-                    <div class="type">
+                <div class="con-box">
 
-                       <span>
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="1" class="regular-radio" checked> 专票
-                            <label class="radio-inline" for="inlineRadio2"></label>
-                        </span>
-                        <span>
-                            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="2" class="regular-radio"> 普票
-                             <label class="radio-inline" for="inlineRadio3"></label>
-                        </span>
-
-                    </div>
-
-                        <table class="table">
+                    <div class="other-lend-info">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th colspan="4" bgcolor="#f2f2f2">基本信息</th>
+                            </tr>
+                            </thead>
                             <tbody>
                             <tr>
-                                <td>业号：<input type="text" class="form-control"></td>
-                                <td>项目名称：<input type="text" class="form-control"></td>
-                                <td>部门：<input type="text" class="form-control"></td>
-                                <td>项目负责人：<input type="text" class="form-control"></td>
-                                <td>委托单位：<input type="text" class="form-control"></td>
-                            </tr>
-                            <tr>
-                                <td>发票金额：<input type="text" class="form-control"></td>
+                                <td width="150">发票类型：</td>
                                 <td>
-                                    所属：
                                     <select class="form-control">
-                                        <option>总院</option>
-                                        <option>公司</option>
+                                        <option>专票</option>
+                                        <option>普票</option>
                                     </select>
                                 </td>
-
-                                <td>付款单位地址：<input type="text" class="form-control"></td>
-                                <td>付款单位电话：<input type="text" class="form-control"></td>
-                                <td>付款单位开户银行：<input type="text" class="form-control"></td>
+                                <td>业号：</td>
+                                <td> <input type="text" class="form-control"></td>
                             </tr>
                             <tr>
-                                <td>付款单位开户账号：<input type="text" class="form-control"></td>
-                                <td>付款单位税务登记证号码：<input type="text" class="form-control"></td>
-                                <td colspan="3">备注：<input type="text" class="form-control"></td>
-                            </tr>
-                            <tr id="type-file">
-                                <td colspan="2">要求1：<input type="file"></td>
-                                <td colspan="3">要求2：<input type="file"></td>
+                                <td>项目名称：</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>项目负责人：</td>
+                                <td><input type="text" class="form-control"></td>
                             </tr>
                             <tr>
-                                <td colspan="5">回执：<input type="file"></td>
+                                <td>委托单位：</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>所属：</td>
+                                <td>
+                                    <select class="form-control" id="belong">
+                                        <option value="公司">公司</option>
+                                        <option value="总院">总院</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>纳税人识别号：</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>地址：</td>
+                                <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>电话：</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td>开户行：</td>
+                                <td><input type="text" class="form-control"></td>
+                            </tr>
+                            <tr>
+                                <td>账号：</td>
+                                <td><input type="text" class="form-control"></td>
+                                <td colspan="2"></td>
                             </tr>
                             </tbody>
                         </table>
+
+
+
+
+                     <!--   <div class="form-file">
+                            <div class="file-list">
+                                <div class="file-btn">
+                                    <a href="javascript:;" class="a-upload btn btn-primary">
+                                        <input type="file" name="" id="up">点击这里选择回执文件
+                                    </a>
+                                    <a href="javascript:;"  class="upload-btn btn btn-warning">上传</a>
+                                </div>
+                                <div class="file-img"><img id="ImgPr"/></div>
+                            </div>
+                            <div class="file-list esp">
+                                <div class="file-btn">
+                                    <a href="javascript:;" class="a-upload btn btn-primary">
+                                        <input type="file" name="" id="up2">选择专票要求1附件
+                                    </a>
+                                    <a href="javascript:;"  class="upload-btn btn btn-warning">上传</a>
+                                </div>
+                                <div class="file-img"><img id="ImgPr2"/></div>
+                            </div>
+                            <div class="file-list esp">
+                                <div class="file-btn">
+                                    <a href="javascript:;" class="a-upload btn btn-primary">
+                                        <input type="file" name="" id="up3">选择专票要求2附件
+                                    </a>
+                                    <a href="javascript:;"  class="upload-btn btn btn-warning">上传</a>
+                                </div>
+                                <div class="file-img"><img id="ImgPr3"/></div>
+                            </div>
+                        </div>-->
+                        <div class="lend-orders">
+                            <div class="company">
+                                <h3>借款单</h3>
+                                <table class="table table-bordered">
+                                    <caption style="text-align: center" class="lend-year-input"><input type="text">年<input type="text">月<input type="text">日</caption>
+                                    <tbody>
+                                    <tr>
+                                        <td width="100" class="font-bold">借支人姓名</td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td width="60">部门</td>
+                                        <td><input type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">借 支 事 由</td>
+                                        <td colspan="3"><input type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="lend-apply-money">
+                                            <p class="font-bold">今借到人民币（大写）：</p>
+                                            <p><input type="text">拾<input type="text">万<input type="text">仟<input type="text">佰<input type="text">拾<input type="text">元</p>
+                                            <p><span>￥</span><input type="text" style="width: 150px"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td colspan="3"><textarea class="form-control" rows="3"></textarea></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <ul class="orders-foot">
+                                    <li><span>负责人：</span><input type="text"></li>
+                                    <li><span>核准：</span><input type="text"></li>
+                                    <li><span>复核：</span><input type="text"></li>
+                                    <li><span>借款人：</span><input type="text"></li>
+                                </ul>
+                            </div>
+
+                            <div class="yuan" style="display: none">
+                                <h3>借支单</h3>
+                                <table class="table table-bordered">
+                                    <caption style="text-align: center" class="lend-year-input"><input type="text">年<input type="text">月<input type="text">日</caption>
+                                    <tbody>
+                                    <tr>
+                                        <td width="100" class="font-bold">借支人姓名</td>
+                                        <td><input type="text" class="form-control"></td>
+                                        <td width="60">部门</td>
+                                        <td><input type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">借 支 事 由</td>
+                                        <td colspan="3"><input type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="lend-apply-money">
+                                            <p class="font-bold">今借到人民币（大写）：</p>
+                                            <p><input type="text">拾<input type="text">万<input type="text">仟<input type="text">佰<input type="text">拾<input type="text">元</p>
+                                            <p><span>￥</span><input type="text" style="width: 150px"></p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>备注</td>
+                                        <td colspan="3"><textarea class="form-control" rows="3"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 0" colspan="4" class="yuan-orders-foot">
+                                            <table class="table-bordered">
+                                                <tr>
+                                                    <td>核<br>准</td>
+                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>会<br>计</td>
+                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>出<br>纳</td>
+                                                    <td><input type="text" class="form-control"></td>
+                                                    <td>借<br>支<br>人</td>
+                                                    <td><input type="text" class="form-control"></td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
                     <button type="button" class="btn btn-primary revise">确认</button>
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
-
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script src="../js/file.js"></script>
         <script>
+
             $(function () {
-                $(".regular-radio").change(function() {
-                    if($(this).val()==2){
-                        $('#type-file').hide()
+                $("#up").uploadPreview({ Img: "ImgPr"});
+                $("#up2").uploadPreview({ Img: "ImgPr2" });
+                $("#up3").uploadPreview({ Img: "ImgPr3" });
+
+                $('#belong').change(function(){
+                    var p1=$(this).children('option:selected').val();//这就是selected的值
+                    if(p1=='总院'){
+                        $('.yuan').show()
+                        $('.company').hide()
+                    }else{
+                        $('.yuan').hide()
+                        $('.company').show()
                     }
-                    if($(this).val()==1){
-                        $('#type-file').show()
-                    }
-                });
+                })
             });
         </script>
     </div>

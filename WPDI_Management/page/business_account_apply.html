@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/sass/common.css">
     <script src="../js/jquery-2.1.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
 <body class="app">
     <div class="app">
@@ -68,6 +68,14 @@
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li>
@@ -144,44 +152,130 @@
                 </div><!--top-->
 
                 <div class="con-box apply-busAcc">
-                    <table class="table">
-                        <tbody>
-                        <tr>
-                            <td>申请人：<input type="text" value="申请人" class="form-control"></td>
-                            <td>部门：
-                                <select class="form-control">
-                                    <option>部门1</option>
-                                    <option>部门2</option>
-                                    <option>部门3</option>
-                                    <option>部门4</option>
-                                    <option>部门5</option>
-                                </select>
-                            </td>
-                            <td>项目名称：<input type="text" value="项目名称" class="form-control" ></td>
-                            <td>委托单位：<input type="text" value="委托单位" class="form-control" ></td>
-                            <td>项目类别：<input type="text" value="项目类别" class="form-control"></td>
-                            <td>金额：<input type="text" value="金额" class="form-control"></td>
-                        </tr>
-                        <tr>
-                            <td>要求完成时间：<input type="text" value="2017-09-08" class="form-control"></td>
-                            <td>建设单位：<input type="text" value="建设单位" class="form-control"></td>
-                            <td>建设单位联系人：<input type="text" value="联系人" class="form-control" ></td>
-                            <td>联系方式：<input type="text" value="联系方式" class="form-control" ></td>
-                            <td>兴建地址：<input type="text" value="兴建地址" class="form-control" ></td>
-                            <td>规模：<input type="text" value="规模" class="form-control"></td>
-                        </tr>
-                        <tr>
-                            <td colspan="5">备注：<input type="text" value="备注" class="form-control"></td>
-                            <td>登记时间：<input type="text" value="时间" class="form-control" disabled></td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <div class="form">
+                        <div class="form-con">
+                            <div class="form-list">
+                                <p class="left-title">申请人：</p>
+                                <p class="right-input">
+                                    <input type="text" class="form-control">
+                                </p>
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">部门：</p>
+                                <p class="right-input">
+                                    <select class="form-control">
+                                        <option>部门1</option>
+                                        <option>部门2</option>
+                                        <option>部门3</option>
+                                        <option>部门4</option>
+                                        <option>部门5</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">项目名称：</p>
+                                <p class="right-input">
+                                    <input type="text" class="form-control">
+                                </p>
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">委托单位：</p>
+                                <p class="right-input">
+                                    <input type="text" class="form-control">
+                                </p>
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">项目类别：</p>
+                                <p class="right-input" style="display: flex">
+                                    <select class="form-control" id="classMain">
+                                        <option value="">请选择</option>
+                                    </select>
+                                    <select class="form-control" id="classSub">
+                                        <option value="">请选择</option>
+                                    </select>
+                                </p>
+
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">项目区域：</p>
+                                <p class="right-input">
+                                    <input type="text" class="form-control">
+                                </p>
+                            </div>
+
+                            <div class="form-list">
+                                <p class="left-title">下达时间：</p>
+                                <p class="right-input">
+                                    <input type="text" placeholder="2017-09-08" class="form-control" id="time2">
+                                </p>
+                            </div>
+                            <div class="form-list">
+                                <p class="left-title">备注：</p>
+                                <p class="right-input">
+                                    <input type="text" class="form-control">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
                     <button type="button" class="btn btn-primary revise">确认申请</button>
 
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
+        <script src="../js/laydate.js"></script>
+        <script>
+            /*laydate.render({
+                elem: '#time' //指定元素
+            });*/
+            laydate.render({
+                elem: '#time2' //指定元素
+            });
 
+
+            /**项目分类二级联动**/
+            var jsondata={
+                "elements":[
+                    {"key":"分类一","value":["01","02","03","05","04"]},
+                    {"key":"分类二","value":["001","02","03"]},
+                    {"key":"分类三","value":["0001","02","03","05","04"]},
+                    {"key":"分类四","value":["00001","02","03"]},
+                    {"key":"分类五","value":["00001","02","03","05","04"]}
+                ]};
+            var jsonobjct=eval(jsondata);
+            var jsondata=jsonobjct.elements;
+
+            $(function(){
+                var option1 = '';
+                $.each(jsondata, function(index, indexItems) {
+                    option1 += "<option >"
+                        + indexItems.key + "</option>";
+                });
+                $("#classMain").append(option1);
+                $("#classMain").bind("change", function() {
+                    selectIssue(jsondata);
+
+                });
+            })
+
+            function selectIssue(data) {
+                var option2 = '';
+                var selectedIndex = $("#classMain :selected").text();
+                $("#classSub").empty();
+                $.each(data, function(index, indexItems) {
+                    if (indexItems.key != selectedIndex) {
+                        return;
+                    } else {
+
+                        $.each(indexItems.value, function(index, Items) {
+                            option2 += "<option>"  + Items + "</option>";
+                        });
+
+                    }
+                });
+                $("#classSub").append(option2);
+            };
+        </script>
     </div>
 </body>
 </html>

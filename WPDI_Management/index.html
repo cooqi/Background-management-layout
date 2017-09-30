@@ -8,26 +8,27 @@
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/echarts.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
-<body class="app">
+<body class="app plan3">
     <div class="app">
         <header class="header-top">
             <div class="logo">
                 <p>WPDC经营管理系统</p>
             </div>
             <div class="user-state">
-                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息">
+                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息"  >
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-yonghu"></use>
                     </svg>
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="./page/msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -36,13 +37,47 @@
                 </p>
             </div>
 
-            <script>
-                $(function () {
-                    $('[data-toggle="tooltip"]').tooltip()
-                })
-            </script>
         </header><!--header-->
+        <!-- Modal -->
+        <div class="modal fade" id="userinfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color: #666">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">修改密码</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">新密码</label>
+                                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="新密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">再次输入新密码</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="再次输入新密码">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal end-->
 
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+                $('.user-name').click(function(){
+                    $('#userinfo').modal()
+                })
+            })
+        </script>
+
+
+        <!-*****************************************************--->
         <div class="main_box index">
             <div class="fixed-left">
                 <ul>
@@ -63,11 +98,19 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/business_account_cancel.html">
+                        <a href="./page/business_account.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li>
@@ -183,7 +226,7 @@
                 <div class="con-box">
                     <div class="row chart-bar">
                         <div class="col-sm-12 col-lg-6">
-                            <h3>本年度项目情况</h3>
+                            <h3>2017年度项目情况</h3>
                             <div id="mainONE" style="width:100%;height:400px;"></div>
                         </div>
                         <div class="col-sm-12 col-lg-6">
@@ -202,10 +245,10 @@
                     </div>
                     <div class="row chart-pia">
                         <div class="col-sm-12 col-md-6">
-                            <div id="mainFIVE" style="width:90%;height:400px;margin: auto"></div>
+                            <div id="mainFIVE" style="width:80%;height:300px;margin: auto"></div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div id="mainSIX" style="width:90%;height:400px;margin: auto"></div>
+                            <div id="mainSIX" style="width:80%;height:300px;margin: auto"></div>
                         </div>
                     </div>
                 </div>
@@ -213,9 +256,6 @@
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
 
         <script>
             // 基于准备好的dom，初始化echarts实例
@@ -239,10 +279,8 @@
                     }
                 },
                 toolbox: {
+                    show: true,
                     feature: {
-                        dataView: {show: true, readOnly: false},
-                        magicType: {show: true, type: ['line', 'bar']},
-                        restore: {show: true},
                         saveAsImage: {show: true}
                     }
                 },
@@ -250,12 +288,12 @@
                     containLabel:true
                 },
                 legend: {
-                    data:['2017年项目新增项目合同总额','2017年结转项目收费总额','2017年新增目收费总额']
+                    data:['项目新增项目合同总额','结转项目收费总额','新增目收费总额']
                 },
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['总体规划所','土地利用规划所','交通市政分院','区域规划所','规划设计一所','规划设计二所','国际交流与合作所','数字规划研究中心','东湖分院','武汉新区分院','襄阳分院','武规设计公司'],
+                        data: ['城乡规划所','建筑设计所','市政设计一所','市政规划所','市政设计二所','战略策划研究所','风景园林所','建筑创作中心','数字媒体中心'],
                         axisPointer: {
                             type: 'shadow'
                         },
@@ -279,19 +317,19 @@
                 ],
                 series: [
                     {
-                        name:'2017年项目新增项目合同总额',
+                        name:'项目新增项目合同总额',
                         type:'bar',
-                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        data:[92.0, 24.9, 27.0, 123.2, 25.6, 176.7, 135.6, 162.2, 232.6]
                     },
                     {
-                        name:'2017年结转项目收费总额',
+                        name:'结转项目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[122.6, 52.9, 159.0, 126.4, 128.7, 70.7, 175.6, 182.2, 248.7]
                     },
                     {
-                        name:'2017年新增目收费总额',
+                        name:'新增目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[22.6, 125.9, 129.0, 126.4, 128.7, 70.7, 175.6, 182.2, 248.7]
                     }
                 ]
             };
@@ -306,10 +344,8 @@
                     }
                 },
                 toolbox: {
+                    show: true,
                     feature: {
-                        dataView: {show: true, readOnly: false},
-                        magicType: {show: true, type: ['line', 'bar']},
-                        restore: {show: true},
                         saveAsImage: {show: true}
                     }
                 },
@@ -322,7 +358,7 @@
                 xAxis: [
                     {
                         type: 'category',
-                        data: ['总体规划所','土地利用规划所','交通市政分院','区域规划所','规划设计一所','规划设计二所','国际交流与合作所','数字规划研究中心','东湖分院','武汉新区分院','襄阳分院','武规设计公司'],
+                        data: ['城乡规划所','建筑设计所','市政设计一所','市政规划所','市政设计二所','战略策划研究所','风景园林所','建筑创作中心','数字媒体中心'],
                         axisPointer: {
                             type: 'shadow'
                         },
@@ -351,12 +387,12 @@
                     {
                         name:'结转项目本年收费金额',
                         type:'bar',
-                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        data:[20.0, 40.9, 70.0, 23.2, 25.6, 76.7, 135.6, 262.2]
                     },
                     {
                         name:'结转项目累计欠款总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[20.6, 50.9, 90.0, 26.4, 28.7, 70.7, 175.6, 82.2]
                     }
                 ]
             };
@@ -372,13 +408,7 @@
                 toolbox: {
                     show: true,
                     feature: {
-                        dataZoom: {
-                            yAxisIndex: 'none'
-                        },
-                        dataView: {readOnly: false},
-                        magicType: {type: ['line', 'bar']},
-                        restore: {},
-                        saveAsImage: {}
+                        saveAsImage: {show: true}
                     }
                 },
                 xAxis:  {
@@ -414,6 +444,12 @@
                 tooltip : {
                     trigger: 'item',
                     formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        saveAsImage: {show: true}
+                    }
                 },
                 legend: {
                     orient: 'vertical',
@@ -473,7 +509,7 @@
             };
             var option05 = {
                 backgroundColor: {
-                    image: bgPatternImg,
+                    //image: bgPatternImg,
                     repeat: 'repeat'
                 },
                 title: {
@@ -481,11 +517,17 @@
                     textStyle: {
                         color: '#235894'
                     },
-                    x:'center'
+                  //  x:'center'
                 },
                 tooltip: {
                     trigger: 'item',
                     formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        saveAsImage: {show: true}
+                    }
                 },
                 series: [{
                     name: '本年项目收费',
@@ -495,7 +537,7 @@
                     clockwise: true,
                     label: {
                         normal: {
-                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
                             backgroundColor: '#eee',
                             borderColor: '#aaa',
                             borderWidth: 1,
@@ -515,7 +557,12 @@
                                 },
                                 b: {
                                     fontSize: 16,
-                                    lineHeight: 33
+                                    lineHeight: 20,
+                                    align: 'center'
+                                },
+                                c:{
+                                    fontSize: 16,
+                                    lineHeight: 24
                                 },
                                 per: {
                                     color: '#eee',
@@ -535,7 +582,7 @@
                     },
                     data:[
                         {value:335, name:'已收'},
-                        {value:30, name:'未收'},
+                        {value:300, name:'未收'},
                     ],
                     itemStyle: itemStyle
                 }]
@@ -543,18 +590,25 @@
 
             var option06 = {
                 backgroundColor: {
-                    image: bgPatternImg,
+                   // image: bgPatternImg,
                     repeat: 'repeat'
                 },
                 title: {
                     text: '项目收费比例',
                     textStyle: {
-                        color: '#235894'
+                        color: '#235894',
+                        lineHeight:40
                     }
                 },
                 tooltip: {
                     trigger: 'item',
                     formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        saveAsImage: {show: true}
+                    }
                 },
                 series: [{
                     name: '项目收费比例',
@@ -564,7 +618,7 @@
                     clockwise: true,
                     label: {
                         normal: {
-                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
+                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
                             backgroundColor: '#eee',
                             borderColor: '#aaa',
                             borderWidth: 1,
@@ -584,7 +638,12 @@
                                 },
                                 b: {
                                     fontSize: 16,
-                                    lineHeight: 33
+                                    lineHeight: 20,
+                                    align: 'center'
+                                },
+                                c:{
+                                    fontSize: 16,
+                                    lineHeight: 24
                                 },
                                 per: {
                                     color: '#eee',
@@ -617,6 +676,17 @@
             myChart04.setOption(option04);
             myChart05.setOption(option05);
             myChart06.setOption(option06);
+
+
+            /****/
+            window.onresize = function(){
+                myChart.resize();
+                myChart02.resize();
+                myChart03.resize();
+                myChart04.resize();
+                myChart05.resize();
+                myChart06.resize();
+            }
         </script>
     </div>
 </body>

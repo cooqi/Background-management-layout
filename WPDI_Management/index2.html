@@ -8,7 +8,7 @@
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/echarts.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
 <body class="app">
     <div class="app">
@@ -24,10 +24,11 @@
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <svg class="icon" aria-hidden="true">
+                    <a href="./page/msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
-                    <span></span>
+                        <span></span>
+                    </a>
                 </p>
                 <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
                     <svg class="icon" aria-hidden="true">
@@ -68,6 +69,14 @@
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li>
@@ -669,6 +678,16 @@
             myChart05.setOption(option05);
             myChart06.setOption(option06);
 
+
+            /****/
+            window.onresize = function(){
+                myChart.resize();
+                myChart02.resize();
+                myChart03.resize();
+                myChart04.resize();
+                myChart05.resize();
+                myChart06.resize();
+            }
         </script>
     </div>
 </body>

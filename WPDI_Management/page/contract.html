@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/sass/common.css">
     <script src="../js/jquery-2.1.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
 <body class="app">
     <div class="app">
@@ -62,6 +62,14 @@
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li class="on">
@@ -131,35 +139,36 @@
                 </ul>
             </div><!--fixed left-->
             <div class="content-right">
-                <div class="other-top">
+                <div class="con-top other-top lend-top">
                     <div class="top-title">
-                        <p>合同</p>
+                        <p style="display: inline-block">合同</p>
+                        <a href="contract_making.html" style="display: inline-block;" type="submit" class="btn btn-primary">制作合同</a>
                     </div>
-                    <div class="pro_top_box">
-                        <div class="pro-play">
-                            <a href="contract_making.html" class="btn btn-primary">制作合同</a>
-                        </div>
-
-                        <div class="pro-list-select">
-                            <form class="form-inline">
-                                <div class="form-group">
-                                    <select class="form-control">
-                                        <option>选择年度</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="业号">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" class="form-control"  placeholder="项目名称">
-                                </div>
-                                <button type="submit" class="btn btn-default">搜索</button>
-                            </form>
-                        </div>
+                    <div class="pro-list-select">
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>选择年度</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control">
+                                    <option>选择部门</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="a1" placeholder="关键词">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
                     </div>
                 </div><!--top-->
 
@@ -172,6 +181,7 @@
                             <th>项目名称</th>
                             <th>金额（万元）</th>
                             <th>所属</th>
+                            <th>状态</th>
                             <th>时间</th>
                             <th>操作</th>
                         </tr>
@@ -179,34 +189,36 @@
                         <tbody>
                         <tr>
                             <td width="50">1</td>
-                            <td width="150">WPDI456123</td>
+                            <td width="150">WPDC-456123</td>
                             <td><a href="contract_detail.html">测试数据测试数据测试数据</a></td>
                             <td>12363.2365</td>
                             <td>公司</td>
+                            <td>返回中</td>
                             <td>2017-9-18</td>
                             <td>
-                                <a href="contract_making.html" class="btn btn-primary">盖章</a>
-                                <a href="contract_making.html" class="btn btn-primary">修改</a>
-                                <a href="contract_making.html" class="btn btn-primary">重签</a>
+                                <a href="contract_stamp.html?type=stamp" class="btn btn-primary">盖章</a>
+                                <a href="contract_edited.html" class="btn btn-primary">更新</a>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#contractResign">重签</a>
                             </td>
                         </tr>
                         <tr>
                             <td width="50">1</td>
-                            <td width="150">WPDI456123</td>
+                            <td width="150">WPDC-456123</td>
                             <td><a href="contract_detail.html">测试数据测试数据测试数据</a></td>
                             <td>12363.2365</td>
                             <td>总院</td>
+                            <td>返回中</td>
                             <td>2017-9-18</td>
                             <td>
-                                <a class="btn btn-primary">盖章</a>
-                                <a class="btn btn-primary">修改</a>
-                                <a class="btn btn-primary">重签</a>
+                                <a href="contract_stamp.html?type=stamp" class="btn btn-primary">盖章</a>
+                                <a href="contract_edited.html" class="btn btn-primary">更新</a>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#contractResign">重签</a>
                             </td>
                         </tr>
                         </tbody>
                     </table>
 
-                    <nav aria-label="Page navigation">
+                    <nav aria-label="Page navigation" class="pull-right">
                         <ul class="pagination">
                             <li>
                                 <a href="#" aria-label="Previous">
@@ -229,9 +241,34 @@
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
+        <!-- Modal -->
+        <div class="modal fade" id="contractResign" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color: #666">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">申请合同重签</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">重签原因</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="输入原因">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">合同回收几份</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">申请</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal end-->
     </div>
 </body>
 </html>

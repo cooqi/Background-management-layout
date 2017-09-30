@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/sass/common.css">
+    <script src="js/jquery-2.1.4.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
+</head>
+<body class="app plan3">
+    <div class="app">
+        <header class="header-top">
+            <div class="logo">
+                <p>WPDC经营管理系统</p>
+            </div>
+            <div class="user-state">
+                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息"  >
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-yonghu"></use>
+                    </svg>
+                    某某
+                </p>
+                <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
+                    <a href="./page/msg_list.html"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xiaoxi"></use>
+                    </svg>
+                        <span></span>
+                    </a>
+                </p>
+                <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuichu"></use>
+                    </svg>
+                </p>
+            </div>
+
+        </header><!--header-->
+        <!-- Modal -->
+        <div class="modal fade" id="userinfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color: #666">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">修改密码</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">新密码</label>
+                                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="新密码">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">再次输入新密码</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="再次输入新密码">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--modal end-->
+
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+                $('.user-name').click(function(){
+                    $('#userinfo').modal()
+                })
+            })
+        </script>
+
+
+        <!--*****************************************************--->
+        <div class="main_box index">
+            <div class="fixed-left">
+                <ul>
+                    <li class="on">
+                        <a href="/">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shouye"></use>
+                            </svg>
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/pro_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiangmu"></use>
+                            </svg>
+                            项目
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/business_account.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-bianhao"></use>
+                            </svg>
+                            业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/contract.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-hetong"></use>
+                            </svg>
+                            合同
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/external_assistance.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-waixieziyuan"></use>
+                            </svg>
+                            外协
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/lend_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jiezhishenqing"></use>
+                            </svg>
+                            借支
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/charge.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoufei"></use>
+                            </svg>
+                            收费
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chanzhifenpei"></use>
+                            </svg>
+                            产值
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-gaizhang"></use>
+                            </svg>
+                            盖章
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-guidang"></use>
+                            </svg>
+                            归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-analysis"></use>
+                            </svg>
+                            分析
+                        </a>
+                    </li>
+                </ul>
+            </div><!--fixed left-->
+            <div class="content-right">
+                <div class="con-top index-top">
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3><span class="counter">52365</span></h3>
+                        <p>本年度项目</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年合同</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年到款</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>本年结转</p>
+                    </div>
+                    <div class="top-box">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-chanzhifenpei"></use>
+                        </svg>
+                        <h3><span class="counter">52365.3265</span>万</h3>
+                        <p>到款总额</p>
+                    </div>
+                </div><!--top-->
+                <script src="js/jquery.waypoints.min.js"></script>
+                <script type="text/javascript" src="js/jquery.countup.min.js"></script>
+                <script type="text/javascript">
+                    $('.counter').countUp();
+                </script>
+
+                <div class="con-box">
+                    <div class="row chart-bar">
+                        <div class="col-sm-12 col-lg-6">
+                            <h3>本年度项目情况</h3>
+                            <div id="mainONE" style="width:100%;height:400px;"></div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <h3>项目结转情况</h3>
+                            <div id="mainTWO" style="width:100%;height:400px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row chart-pia">
+                        <div class="col-sm-12 col-lg-6">
+                            <div id="mainTHREE" style="width:90%;height:400px;margin: auto"></div>
+                        </div>
+                        <div class="col-sm-12 col-lg-6">
+                            <div id="mainFOUR" style="width:90%;height:400px;margin: auto"></div>
+                        </div>
+                    </div>
+                    <div class="row chart-pia">
+                        <div class="col-sm-12 col-md-6">
+                            <div id="mainFIVE" style="width:90%;height:400px;margin: auto"></div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div id="mainSIX" style="width:90%;height:400px;margin: auto"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!--content right-->
+        </div><!--main_box-->
+
+        <footer class="foot-box">
+            footer
+        </footer><!--footer-->
+
+        <script>
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('mainONE'));
+            var myChart02 = echarts.init(document.getElementById('mainTWO'));
+            var myChart03 = echarts.init(document.getElementById('mainTHREE'));
+            var myChart04 = echarts.init(document.getElementById('mainFOUR'));
+            var myChart05 = echarts.init(document.getElementById('mainFIVE'));
+            var myChart06 = echarts.init(document.getElementById('mainSIX'));
+
+            // 指定图表的配置项和数据
+
+            var option = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                grid:{
+                    containLabel:true
+                },
+                legend: {
+                    data:['项目新增项目合同总额','结转项目收费总额','新增目收费总额']
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: ['总体规划所','土地利用规划所','交通市政分院','区域规划所','规划设计一所','规划设计二所','国际交流与合作所','数字规划研究中心','东湖分院','武汉新区分院','襄阳分院','武规设计公司'],
+                        axisPointer: {
+                            type: 'shadow'
+                        },
+                        axisLabel: {
+                            interval: 0,
+                            rotate: 45
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '金额',
+                        min: 0,
+                        max: 300,
+                        interval: 50,
+                        axisLabel: {
+                            formatter: '{value} k'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'项目新增项目合同总额',
+                        type:'bar',
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                    },
+                    {
+                        name:'结转项目收费总额',
+                        type:'bar',
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                    },
+                    {
+                        name:'新增目收费总额',
+                        type:'bar',
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                    }
+                ]
+            };
+            var option02 = {
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: {
+                        type: 'cross',
+                        crossStyle: {
+                            color: '#999'
+                        }
+                    }
+                },
+                toolbox: {
+                    feature: {
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
+                    }
+                },
+                legend: {
+                    data:['结转项目本年收费金额','结转项目累计欠款总额']
+                },
+                grid:{
+                    containLabel:true
+                },
+                xAxis: [
+                    {
+                        type: 'category',
+                        data: ['总体规划所','土地利用规划所','交通市政分院','区域规划所','规划设计一所','规划设计二所','国际交流与合作所','数字规划研究中心','东湖分院','武汉新区分院','襄阳分院','武规设计公司'],
+                        axisPointer: {
+                            type: 'shadow'
+                        },
+                        axisLabel: {
+                            interval: 0,
+                            rotate: 45
+                        },
+                        splitLine: {
+                            show: false
+                        }
+                    }
+                ],
+                yAxis: [
+                    {
+                        type: 'value',
+                        name: '金额',
+                        min: 0,
+                        max: 300,
+                        interval: 50,
+                        axisLabel: {
+                            formatter: '{value} k'
+                        }
+                    }
+                ],
+                series: [
+                    {
+                        name:'结转项目本年收费金额',
+                        type:'bar',
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                    },
+                    {
+                        name:'结转项目累计欠款总额',
+                        type:'bar',
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                    }
+                ]
+            };
+            var option03={
+                title: {
+                    text: '同期合同总额比较',
+                    x:'center'
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    formatter: "{a} <br/>{b} : {c} k"
+                },
+                toolbox: {
+                    show: true,
+                    feature: {
+                        dataZoom: {
+                            yAxisIndex: 'none'
+                        },
+                        dataView: {readOnly: false},
+                        magicType: {type: ['line', 'bar']},
+                        restore: {},
+                        saveAsImage: {}
+                    }
+                },
+                xAxis:  {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['2013','2014','2015','2016','2017']
+                },
+                yAxis: {
+                    type: 'value',
+                    axisLabel: {
+                        formatter: '{value} k'
+                    }
+                },
+                series: [
+                    {
+                        name:'合同总金额',
+                        type:'line',
+                        data:[6,20,30,100,200],
+                        markPoint: {
+                            data: [
+                                {type: 'max', name: '最大值'},
+                                {type: 'min', name: '最小值'}
+                            ]
+                        }
+                    }
+                ]
+            };
+            var option04 = {
+                title : {
+                    text: '项目数量情况',
+                    x:'center'
+                },
+                tooltip : {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'left',
+                    data: ['本年','结转']
+                },
+                series : [
+                    {
+                        name: '访问来源',
+                        type: 'pie',
+                        radius : '55%',
+                        center: ['50%', '60%'],
+                        label: {
+                            normal: {
+                                formatter: '{c} ({d}%)'
+                            }
+                        },
+                        data:[
+                            {value:335, name:'本年'},
+                            {value:30, name:'结转'}
+                        ],
+                        itemStyle: {
+                            emphasis: {
+                                shadowBlur: 10,
+                                shadowOffsetX: 0,
+                                shadowColor: 'rgba(0, 0, 0, 0.5)'
+                            }
+                        }
+                    }
+                ]
+            };
+
+            var obj=$.ajax({url:"./json/chatPieBg.json",async:false});
+            var bg=JSON.parse(obj.responseText).bg
+            var piePatternSrc=bg.piePatternSrc;
+            var bgPatternSrc=bg.bgPatternSrc;
+            var piePatternImg = new Image();
+            piePatternImg.src = piePatternSrc;
+            var bgPatternImg = new Image();
+            bgPatternImg.src = bgPatternSrc;
+
+            var itemStyle = {
+                normal: {
+                    opacity: 0.7,
+                    color: {
+                        image: piePatternImg,
+                        repeat: 'repeat'
+                    },
+                    borderWidth: 3,
+                    borderColor: '#235894'
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+                }
+            };
+            var option05 = {
+                backgroundColor: {
+                    //image: bgPatternImg,
+                    repeat: 'repeat'
+                },
+                title: {
+                    text: '本年项目收费情况',
+                    textStyle: {
+                        color: '#235894'
+                    },
+                    //  x:'center'
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                series: [{
+                    name: '本年项目收费',
+                    type: 'pie',
+                    selectedMode: 'single',
+                    selectedOffset: 30,
+                    clockwise: true,
+                    label: {
+                        normal: {
+                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 20,
+                                    align: 'center'
+                                },
+                                c:{
+                                    fontSize: 16,
+                                    lineHeight: 24
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: '#235894'
+                            }
+                        }
+                    },
+                    data:[
+                        {value:335, name:'已收'},
+                        {value:300, name:'未收'},
+                    ],
+                    itemStyle: itemStyle
+                }]
+            };
+
+            var option06 = {
+                backgroundColor: {
+                    // image: bgPatternImg,
+                    repeat: 'repeat'
+                },
+                title: {
+                    text: '项目收费比例',
+                    textStyle: {
+                        color: '#235894',
+                        lineHeight:40
+                    }
+                },
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                series: [{
+                    name: '项目收费比例',
+                    type: 'pie',
+                    selectedMode: 'single',
+                    selectedOffset: 30,
+                    clockwise: true,
+                    label: {
+                        normal: {
+                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
+                            backgroundColor: '#eee',
+                            borderColor: '#aaa',
+                            borderWidth: 1,
+                            borderRadius: 4,
+
+                            rich: {
+                                a: {
+                                    color: '#999',
+                                    lineHeight: 22,
+                                    align: 'center'
+                                },
+                                hr: {
+                                    borderColor: '#aaa',
+                                    width: '100%',
+                                    borderWidth: 0.5,
+                                    height: 0
+                                },
+                                b: {
+                                    fontSize: 16,
+                                    lineHeight: 20,
+                                    align: 'center'
+                                },
+                                c:{
+                                    fontSize: 16,
+                                    lineHeight: 24
+                                },
+                                per: {
+                                    color: '#eee',
+                                    backgroundColor: '#334455',
+                                    padding: [2, 4],
+                                    borderRadius: 2
+                                }
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            lineStyle: {
+                                color: '#235894'
+                            }
+                        }
+                    },
+                    data:[
+                        {value:335, name:'本年'},
+                        {value:310, name:'结转'},
+                    ],
+                    itemStyle: itemStyle
+                }]
+            };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+            myChart02.setOption(option02);
+            myChart03.setOption(option03);
+            myChart04.setOption(option04);
+            myChart05.setOption(option05);
+            myChart06.setOption(option06);
+
+
+            /****/
+            window.onresize = function(){
+                myChart.resize();
+                myChart02.resize();
+                myChart03.resize();
+                myChart04.resize();
+                myChart05.resize();
+                myChart06.resize();
+            }
+        </script>
+    </div>
+</body>
+</html>

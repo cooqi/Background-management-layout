@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sass/common.css">
+    <link rel="stylesheet" type="text/css" href="../plugin/diyUpload/css/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="../plugin/diyUpload/css/diyUpload.css">
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
+
+</head>
+<body class="app">
+    <div class="app">
+        <header class="header-top">
+            <div class="logo">
+                <p>WPDC经营管理系统</p>
+            </div>
+            <div class="user-state">
+                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-yonghu"></use>
+                    </svg>
+                    某某
+                </p>
+                <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-xiaoxi"></use>
+                    </svg>
+                        <span></span>
+                    </a>
+                </p>
+                <p class="user-logout" data-toggle="tooltip" data-placement="bottom" title="退出">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tuichu"></use>
+                    </svg>
+                </p>
+            </div>
+        </header><!--header-->
+
+        <div class="main_box">
+            <div class="fixed-left">
+                <ul>
+                    <li>
+                        <a href="../">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shouye"></use>
+                            </svg>
+                            首页
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pro_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-xiangmu"></use>
+                            </svg>
+                            项目
+                        </a>
+                    </li>
+                    <li>
+                        <a href="business_account.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-bianhao"></use>
+                            </svg>
+                            业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
+                        </a>
+                    </li>
+                    <li class="on">
+                        <a href="contract.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-hetong"></use>
+                            </svg>
+                            合同
+                        </a>
+                    </li>
+                    <li>
+                        <a href="external_assistance.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-waixieziyuan"></use>
+                            </svg>
+                            外协
+                        </a>
+                    </li>
+                    <li>
+                        <a href="lend_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-jiezhishenqing"></use>
+                            </svg>
+                            借支
+                        </a>
+                    </li>
+                    <li>
+                        <a href="charge.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shoufei"></use>
+                            </svg>
+                            收费
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-chanzhifenpei"></use>
+                            </svg>
+                            产值
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-gaizhang"></use>
+                            </svg>
+                            盖章
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-guidang"></use>
+                            </svg>
+                            归档
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-analysis"></use>
+                            </svg>
+                            分析
+                        </a>
+                    </li>
+                </ul>
+            </div><!--fixed left-->
+            <div class="content-right">
+                <div class="other-top">
+                    <div class="pro_top_box" style="margin: 0">
+                        <div class="top-title">
+                            <p style="display: inline-block;">合同返回</p>
+                            <div class="pro-play" style="display: inline-block;margin: 0">
+                                <a href="" class="btn btn-primary btn-sm">保存</a>
+                                <a href="" class="btn btn-primary btn-sm">重置</a>
+                                <a onclick="myPrint(document.getElementById('ifr'))" class="btn btn-primary btn-sm print-preview">打印</a>
+                                <a href="" class="btn btn-primary btn-sm">导入OA</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div><!--top-->
+
+                <div class="con-box"  id="print">
+                    <div class="contract-edited">
+                        <div class="contract-box">
+                             <iframe id="ifr" src="./contract-demo/base.html" frameborder="0" style="width: 100%;margin: auto" class="contract-temp"></iframe>
+                        </div>
+                        <div class="form-file">
+                            <div class="file-list">
+                                <div id="as" ></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div><!--content right-->
+        </div><!--main_box-->
+
+    </div>
+
+
+    <script type="text/javascript" src="../plugin/diyUpload/js/webuploader.html5only.min.js"></script>
+    <script type="text/javascript" src="../plugin/diyUpload/js/diyUpload.js"></script>
+
+    <script>
+        $('.esp').change(function(){
+            var val=$(this).children('option:selected').val();
+
+            if(val>0){
+                var loc_url='http://'+window.location.host+window.location.pathname+'?c='+val;
+                 window.location.href=loc_url
+            }else{
+                return false
+            }
+        })
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+            if (r != null) return unescape(r[2]); return null; //返回参数值
+        }
+        $(function(){
+            var url='./contract-demo/base.html';
+            if(getUrlParam('c')){
+                url='./contract-demo/especially'+getUrlParam('c')+'.html';
+                $('.esp').val(getUrlParam('c'))
+            }
+            $('.contract-temp').attr('src',url)
+        });
+        $('.base-temp').click(function(){
+            window.location.href=window.location.href.split('?')[0]
+        });
+
+        // 计算页面的实际高度，iframe自适应会用到
+        function calcPageHeight(doc) {
+            var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
+            var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
+            var height  = Math.max(cHeight, sHeight)
+            return height
+        }
+        var ifr = document.getElementById('ifr')
+        ifr.onload = function() {
+            var iDoc = ifr.contentDocument || ifr.document
+            var height = calcPageHeight(iDoc)
+            ifr.style.height = height + 'px'
+        };
+
+
+            function myPrint(docStr){
+            //document.getElementById("result").contentWindow.print();
+                docStr.contentWindow.print()
+                /*var newWindow=window.open("打印窗口","_blank");
+                var docStr = obj.innerHTML;
+                newWindow.document.write(docStr);
+                newWindow.document.close();
+                newWindow.print();
+                newWindow.close();*/
+            }
+
+
+            /*upload*/
+        $('#as').diyUpload({
+            url:'server/fileupload.php',
+            success:function( data ) {
+                console.info( data );
+            },
+            error:function( err ) {
+                console.info( err );
+            },
+            buttonText : '选择附件文件',
+            chunked:true,
+            // 分片大小
+            chunkSize:512 * 1024,
+            //最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
+            fileNumLimit:50,
+            fileSizeLimit:500000 * 1024,
+            fileSingleSizeLimit:50000 * 1024,
+            accept: {}
+        });
+    </script>
+</body>
+</html>

@@ -111,9 +111,17 @@
       <div class="signature">
           <h2>签 署 页</h2>
           <table>
-              <tr>
-                  <td>甲方：<br>（盖章）</td>
-                  <td>乙方：<br>（盖章）</td>
+              <tr style="height: 200px">
+                  <td>甲方：（盖章）</td>
+                  <td>乙方：（盖章）
+                      <div class="stamp" style="display: none">
+                          <img src="" alt="" class="gz-img">
+                          <div style="margin-left: 200px">
+                              <button class="gzbtn">盖章</button>
+                              <button class="cancel-gz">取消</button>
+                          </div>
+                      </div>
+                  </td>
               </tr>
               <tr>
                   <td>法定代表人（负责人）或<br>授权代表（签字）：</td>
@@ -131,9 +139,43 @@
       </div>
   </div>
 
+
+  <!-- 签字Modal -->
+  <!--<div class="modal fade" id="gz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="top: auto">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">请填写您的盖章密钥</h4>
+              </div>
+              <div class="modal-body">
+                  <form>
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">密钥</label>
+                          <input type="password" class="form-control" id="exampleInputEmail1" placeholder="密钥">
+                      </div>
+                  </form>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                  <button type="button" class="btn btn-primary" id="sure">确认</button>
+              </div>
+          </div>
+      </div>
+  </div>-->
+
   <script src="../../js/comment.js"></script>
   <script>
+      function getUrlParam(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+          var r = window.parent.location.search.substr(1).match(reg);  //匹配目标参数
+          if (r != null) return unescape(r[2]); return null; //返回参数值
+      }
       $(function(){
+          if(getUrlParam('type')=='stamp'){
+              $('.stamp').show()
+          }
+
           $('.input').bind('input propertychange',function(){
               var $this=$(this);
               var text_length=$this.val().length;
@@ -141,13 +183,34 @@
 console.log(current_width)
               $this.css('width',current_width+'px')
           })
+
+          var gzimg=$('.gz-img').attr('src')
+          if(gzimg==''){
+              $('.cancel-gz').hide()
+              $('.gzbtn').show()
+          }else{
+              $('.cancel-gz').show()
+              $('.gzbtn').hide()
+          }
       })
 
+      $('.gzbtn').click(function () {
+          $('.gz-img').attr('src','../../img/test-zang.png')
+          $('.cancel-gz').show()
+          $('.gzbtn').hide()
+      })
 
+      $('.cancel-gz').click(function () {
+          $('.gz-img').attr('src','')
+          $('.cancel-gz').hide()
+          $('.gzbtn').show()
+      })
       window.onload = function() {
           var height = calcPageHeight(document)
           parent.document.getElementById('ifr').style.height = height + 'px'
       }
+
+
 
   </script>
 </body>

@@ -13,7 +13,7 @@
 
     <script src="../js/jquery-2.1.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_z685iahp4w4b1emi.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
 </head>
 <body class="app">
     <div class="app">
@@ -68,6 +68,14 @@
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
                             业号
+                        </a>
+                    </li>
+                    <li>
+                        <a href="bid_list.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-toubiao"></use>
+                            </svg>
+                            投标
                         </a>
                     </li>
                     <li class="on">
@@ -145,6 +153,7 @@
                                 <a href="" class="btn btn-primary btn-sm">保存</a>
                                 <a href="" class="btn btn-primary btn-sm">重置</a>
                                 <a onclick="myPrint(document.getElementById('ifr'))" class="btn btn-primary btn-sm print-preview">打印</a>
+                                <a onclick="AllAreaWord();" class="btn btn-primary btn-sm">导入OA</a>
                             </div>
                         </div>
 
@@ -167,7 +176,9 @@
                 </div><!--top-->
 
                 <div class="con-box"  id="print">
+                    <div style="width: 80%;margin: auto">
                     <iframe id="ifr" src="./contract-demo/base.html" frameborder="0" style="width: 100%;margin: auto" class="contract-temp"></iframe>
+                    </div>
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
@@ -175,6 +186,21 @@
     </div>
 
     <script>
+        //指定页面区域内容导入Word
+        function AllAreaWord()
+        {
+            var oWD = new ActiveXObject("Word.Application");
+            var oDC = oWD.Documents.Add("",0,1);
+            var oRange =oDC.Range(0,1);
+            var sel = document.body.createTextRange();
+            sel.moveToElementText(PrintA);
+            sel.select();
+            sel.execCommand("Copy");
+            oRange.Paste();
+            oWD.Application.Visible = true;
+//window.close();
+        }
+
         $('.esp').change(function(){
             var val=$(this).children('option:selected').val();
 
