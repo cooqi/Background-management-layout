@@ -5,12 +5,6 @@
     <title>Title</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/sass/common.css">
-
-    <!--<link rel="stylesheet" href="../css/960.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="../css/screen.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="../css/print.css" type="text/css" media="print" />
-    <link rel="stylesheet" href="../css/print-preview.css" type="text/css" media="screen">-->
-
     <script src="../js/jquery-2.1.4.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="//at.alicdn.com/t/font_260932_kkn5ot8us6rvbo6r.js"></script>
@@ -78,7 +72,7 @@
                             投标
                         </a>
                     </li>
-                    <li class="on">
+                    <li>
                         <a href="contract.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-hetong"></use>
@@ -118,7 +112,7 @@
                             产值
                         </a>
                     </li>
-                    <li>
+                    <li class="on">
                         <a href="blueprint.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-gaizhang"></use>
@@ -153,115 +147,135 @@
                 </ul>
             </div><!--fixed left-->
             <div class="content-right">
-                <div class="other-top">
-                    <div class="pro_top_box" style="margin: 0">
-                        <div class="top-title">
-                            <p style="display: inline-block;">制作合同</p>
-                            <div class="pro-play" style="display: inline-block;margin: 0">
-                                <a href="" class="btn btn-primary btn-sm">保存</a>
-                                <a href="" class="btn btn-primary btn-sm">重置</a>
-                                <a onclick="myPrint(document.getElementById('ifr'))" class="btn btn-primary btn-sm print-preview">打印</a>
-                                <a onclick="AllAreaWord();" class="btn btn-primary btn-sm">导入OA</a>
-                            </div>
-                        </div>
-
+                <div class="con-top other-top">
+                    <div class="top-title">
+                        <p style="display: inline-block;" >出图盖章</p>
+                        <a style="display: inline-block;"  href="blueprint_add.html" class="btn btn-primary">添加</a>
+                    </div>
+                    <div class="pro_top_box">
 
                         <div class="pro-list-select">
                             <form class="form-inline">
                                 <div class="form-group">
-                                    <select class="form-control esp">
-                                        <option value="0">选择个性模板</option>
-                                        <option value="1">个性模板1</option>
-                                        <option value="2">个性模板2</option>
-                                        <option value="3">个性模板3</option>
-                                        <option value="4">个性模板4</option>
+                                    <select class="form-control">
+                                        <option>选择年度</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
                                     </select>
                                 </div>
-                                <a class="btn btn-primary base-temp">基本模板</a>
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  placeholder="业号">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control"  placeholder="项目名称">
+                                </div>
+                                <button type="submit" class="btn btn-default">搜索</button>
                             </form>
                         </div>
                     </div>
                 </div><!--top-->
 
-                <div class="con-box"  id="print">
-                    <div style="width: 80%;margin: auto">
-                    <iframe id="ifr" src="./contract-demo/base.html" frameborder="0" style="width: 100%;margin: auto" class="contract-temp"></iframe>
-                    </div>
+                <div class="con-box">
+                    <table class="table table-striped table-hover pro-lists">
+                        <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>业号</th>
+                            <th>项目名称</th>
+                            <th>状态</th>
+                            <th>几套</th>
+                            <th>签收人</th>
+                            <th>时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td width="50">1</td>
+                            <td width="150">WPDC-456123</td>
+                            <td><a href="blueprint_detail.html">测试数据测试数据测试数据</a></td>
+                            <td style="color: green">已盖章-成果盖章</td>
+                            <td>套数</td>
+
+                            <td>某某</td>
+                            <td>2017-9-18</td>
+                            <td>
+                                <a class="btn btn-primary disabled">盖章</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50">2</td>
+                            <td width="150">WPDC-456123</td>
+                            <td><a href="blueprint_detail.html">测试数据测试数据测试数据</a></td>
+                            <td style="color: green">已盖章-成果盖章</td>
+                            <td>套数</td>
+
+                            <td>某某</td>
+                            <td>2017-9-18</td>
+                            <td>
+                                <a class="btn btn-primary disabled">盖章</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50">3</td>
+                            <td width="150">WPDC-456123</td>
+                            <td><a href="blueprint_detail.html">测试数据测试数据测试数据</a></td>
+                            <td style="color: red">未盖章</td>
+                            <td>套数</td>
+
+                            <td>某某</td>
+                            <td>2017-9-18</td>
+                            <td>
+                                <a class="btn btn-primary" data-toggle="modal" data-target="#stamp">盖章</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <nav aria-label="Page navigation" class="pull-right">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div><!--content right-->
         </div><!--main_box-->
 
     </div>
 
-    <script>
-        //指定页面区域内容导入Word
-        function AllAreaWord()
-        {
-            var oWD = new ActiveXObject("Word.Application");
-            var oDC = oWD.Documents.Add("",0,1);
-            var oRange =oDC.Range(0,1);
-            var sel = document.body.createTextRange();
-            sel.moveToElementText(PrintA);
-            sel.select();
-            sel.execCommand("Copy");
-            oRange.Paste();
-            oWD.Application.Visible = true;
-//window.close();
-        }
-
-        $('.esp').change(function(){
-            var val=$(this).children('option:selected').val();
-
-            if(val>0){
-                var loc_url='http://'+window.location.host+window.location.pathname+'?c='+val;
-                 window.location.href=loc_url
-            }else{
-                return false
-            }
-        })
-        function getUrlParam(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
-            var r = window.location.search.substr(1).match(reg);  //匹配目标参数
-            if (r != null) return unescape(r[2]); return null; //返回参数值
-        }
-        $(function(){
-            var url='./contract-demo/base.html';
-            if(getUrlParam('c')){
-                url='./contract-demo/especially'+getUrlParam('c')+'.html';
-                $('.esp').val(getUrlParam('c'))
-            }
-            $('.contract-temp').attr('src',url)
-        });
-        $('.base-temp').click(function(){
-            window.location.href=window.location.href.split('?')[0]
-        });
-
-        // 计算页面的实际高度，iframe自适应会用到
-        function calcPageHeight(doc) {
-            var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight)
-            var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight)
-            var height  = Math.max(cHeight, sHeight)
-            return height
-        }
-        var ifr = document.getElementById('ifr')
-        ifr.onload = function() {
-            var iDoc = ifr.contentDocument || ifr.document
-            var height = calcPageHeight(iDoc)
-            ifr.style.height = height + 'px'
-        };
-
-
-            function myPrint(docStr){
-            //document.getElementById("result").contentWindow.print();
-                docStr.contentWindow.print()
-                /*var newWindow=window.open("打印窗口","_blank");
-                var docStr = obj.innerHTML;
-                newWindow.document.write(docStr);
-                newWindow.document.close();
-                newWindow.print();
-                newWindow.close();*/
-            }
-
-    </script>
+    <!-- Modal -->
+    <div class="modal fade" id="stamp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">出图盖章</h4>
+                </div>
+                <div class="modal-body">
+                    <p>确定给该图盖章吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

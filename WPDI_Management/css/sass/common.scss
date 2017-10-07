@@ -1,15 +1,14 @@
 /*----------------------------------------scoped---------------------------------------*/
 $HEAD-TOP:50px;
 $FLEX-LEFT:170px;
-/*$MAIN-COLOR:#50E297;          !*深绿*!
-$AUXILIARY-COLOR:#50E378;    !*浅绿*!*/
-$MAIN-COLOR:#004990;          /*深绿*/
-$AUXILIARY-COLOR:#037df3;    /*浅绿*/
-$COLOR05:#53c68b;          /*深绿*/
-$COLOR04:#50E297;          /*浅绿*/
-$COLOR01:#22262F ;          /*深灰*/
-$COLOR02:#717789;         /*浅灰*/
-$COLOR03:#464E65;       /*蓝灰*/
+
+$MAIN-COLOR:#004990;
+$AUXILIARY-COLOR:#037df3;
+$COLOR05:#53c68b;
+$COLOR04:#50E297;
+$COLOR01:#22262F ;
+$COLOR02:#717789;
+$COLOR03:#464E65;
 
 @mixin flex{
   display:flex;flex-direction: row;justify-content: space-between;
@@ -27,12 +26,12 @@ h3,h4,h5,p{margin: 0;}
 table .btn{padding: 3px 12px;font-size: 12px}
 .form-control{height: 28px;padding: 3px 12px}
 
-/*滚动条垂直方向的宽度*/
+
 ::-webkit-scrollbar
 {
   width: 5px;
 }
-/* 垂直滚动条的滑动块 */
+
 ::-webkit-scrollbar-thumb:vertical {
   border-radius: 4px;
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
@@ -234,6 +233,8 @@ body{min-height: 100vh}
 
 
 .other-lend-info table{width: 800px;margin: 15px auto}
+
+.time-right{float: right;display: inline-block;font-size: 12px;color: #999;}
 
   /***********plan3************/
 .plan3 .main_box .content-right .con-top .top-box{background: none;color: #666}

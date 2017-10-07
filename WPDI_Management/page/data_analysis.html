@@ -2,29 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/sass/common.css">
-    <script src="js/jquery-2.1.4.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/echarts.min.js"></script>
-    <script src="//at.alicdn.com/t/font_260932_28qs5eti9ucsdcxr.js"></script>
+    <title>数据分析</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/sass/common.css">
+    <script src="../js/jquery-2.1.4.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/echarts.min.js"></script>
+    <script src="//at.alicdn.com/t/font_260932_kkn5ot8us6rvbo6r.js"></script>
 </head>
-<body class="app plan3">
+<body class="app">
     <div class="app">
         <header class="header-top">
             <div class="logo">
                 <p>WPDC经营管理系统</p>
             </div>
             <div class="user-state">
-                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息"  >
+                <p class="user-name" data-toggle="tooltip" data-placement="left" title="用户信息">
                     <svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-yonghu"></use>
                     </svg>
                     某某
                 </p>
                 <p class="user-msg" data-toggle="tooltip" data-placement="bottom" title="消息通知">
-                    <a href="./page/msg_list.html"><svg class="icon" aria-hidden="true">
+                    <a href="msg_list.html"><svg class="icon" aria-hidden="true">
                         <use xlink:href="#icon-xiaoxi"></use>
                     </svg>
                         <span></span>
@@ -37,51 +37,17 @@
                 </p>
             </div>
 
-        </header><!--header-->
-        <!-- Modal -->
-        <div class="modal fade" id="userinfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="color: #666">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">修改密码</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">新密码</label>
-                                <input type="password" class="form-control" id="exampleInputEmail1" placeholder="新密码">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">再次输入新密码</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="再次输入新密码">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary">保存</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--modal end-->
-
-        <script>
-            $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
-                $('.user-name').click(function(){
-                    $('#userinfo').modal()
+            <script>
+                $(function () {
+                    $('[data-toggle="tooltip"]').tooltip()
                 })
-            })
-        </script>
+            </script>
+        </header><!--header-->
 
-
-        <!--*****************************************************--->
         <div class="main_box index">
             <div class="fixed-left">
                 <ul>
-                    <li class="on">
+                    <li>
                         <a href="../">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shouye"></use>
@@ -90,7 +56,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/pro_list.html">
+                        <a href="pro_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-xiangmu"></use>
                             </svg>
@@ -98,7 +64,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/business_account.html">
+                        <a href="business_account.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-bianhao"></use>
                             </svg>
@@ -106,7 +72,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/bid_list.html">
+                        <a href="bid_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-toubiao"></use>
                             </svg>
@@ -114,7 +80,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/contract.html">
+                        <a href="contract.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-hetong"></use>
                             </svg>
@@ -122,7 +88,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/external_assistance.html">
+                        <a href="external_assistance.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-waixieziyuan"></use>
                             </svg>
@@ -130,7 +96,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/lend_list.html">
+                        <a href="lend_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-jiezhishenqing"></use>
                             </svg>
@@ -138,7 +104,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="./page/charge.html">
+                        <a href="charge.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-shoufei"></use>
                             </svg>
@@ -154,113 +120,119 @@
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="blueprint.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-gaizhang"></use>
                             </svg>
-                            盖章
+                            出图
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="archiving_list.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-guidang"></use>
                             </svg>
                             归档
                         </a>
                     </li>
-                    <li>
-                        <a href="">
+                    <li class="on">
+                        <a href="data_analysis.html">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-analysis"></use>
                             </svg>
                             分析
                         </a>
                     </li>
+                    <li>
+                        <a href="superintendent.html">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-guanliyuan"></use>
+                            </svg>
+                            所长
+                        </a>
+                    </li>
                 </ul>
             </div><!--fixed left-->
-            <div class="content-right">
-                <div class="con-top index-top">
-                    <div class="top-box">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-chanzhifenpei"></use>
-                        </svg>
-                        <h3><span class="counter">52365</span></h3>
-                        <p>本年度项目</p>
-                    </div>
-                    <div class="top-box">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-chanzhifenpei"></use>
-                        </svg>
-                        <h3><span class="counter">52365.3265</span>万</h3>
-                        <p>本年合同</p>
-                    </div>
-                    <div class="top-box">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-chanzhifenpei"></use>
-                        </svg>
-                        <h3><span class="counter">52365.3265</span>万</h3>
-                        <p>本年到款</p>
-                    </div>
-                    <div class="top-box">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-chanzhifenpei"></use>
-                        </svg>
-                        <h3><span class="counter">52365.3265</span>万</h3>
-                        <p>本年结转</p>
-                    </div>
-                    <div class="top-box">
-                        <svg class="icon" aria-hidden="true">
-                            <use xlink:href="#icon-chanzhifenpei"></use>
-                        </svg>
-                        <h3><span class="counter">52365.3265</span>万</h3>
-                        <p>到款总额</p>
-                    </div>
-                </div><!--top-->
-                <script src="js/jquery.waypoints.min.js"></script>
-                <script type="text/javascript" src="js/jquery.countup.min.js"></script>
+            <div class="content-right" style="margin-top: 0">
+
+                <script src="../js/jquery.waypoints.min.js"></script>
+                <script type="text/javascript" src="../js/jquery.countup.min.js"></script>
                 <script type="text/javascript">
                     $('.counter').countUp();
                 </script>
 
                 <div class="con-box">
-                    <div class="row chart-bar">
-                        <div class="col-sm-12 col-lg-6">
+                    <div class="hello">
+                        <div class="box box1" style="transform: translate(-42%,-38%) scale(.2)" onclick="choose(1)">
                             <h3>本年度项目情况</h3>
-                            <div id="mainONE" style="width:100%;height:400px;"></div>
+                            <div id="mainTWO" style="width:100%;height:100%;"></div>
+                            <p>本年度项目情况</p>
                         </div>
-                        <div class="col-sm-12 col-lg-6">
+                        <div class="box box2" style="transform: translate(-21%,-38%) scale(.2)"  onclick="choose(2)">
+                            <div id="mainTHREE" style="width:100%;height:100%;"></div>
+                            <p>项目结转情况</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(0,-38%) scale(.2)"  onclick="choose(3)">
+                            <div id="mainFOUR" style="width:90%;height:100%;margin: auto"></div>
+                            <p>同期合同总额比较</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(21%,-38%) scale(.2)"  onclick="choose(4)">
+                            <div id="mainFIVE" style="width:90%;height:100%;margin: auto"></div>
+                            <p>本年项目收费情况</p>
+                        </div>
+                        <div class="box box3" style="transform: translate(42%,-38%) scale(.2)"  onclick="choose(5)">
+                            <div id="mainSIX" style="width:90%;height:100%;margin: auto"></div>
+                            <p>项目收费比例</p>
+                        </div>
+                        <div class="box box4 activ" style="transform: translate(0,30%) scale(1)"  onclick="choose(6)">
                             <h3>项目结转情况</h3>
-                            <div id="mainTWO" style="width:100%;height:400px;"></div>
+                            <div id="mainONE" style="width:90%;height:100%;margin: auto"></div>
+                            <p>项目数量情况</p>
                         </div>
                     </div>
 
-                    <div class="row chart-pia">
-                        <div class="col-sm-12 col-lg-6">
-                            <div id="mainTHREE" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                        <div class="col-sm-12 col-lg-6">
-                            <div id="mainFOUR" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                    </div>
-                    <div class="row chart-pia">
-                        <div class="col-sm-12 col-md-6">
-                            <div id="mainFIVE" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                        <div class="col-sm-12 col-md-6">
-                            <div id="mainSIX" style="width:90%;height:400px;margin: auto"></div>
-                        </div>
-                    </div>
                 </div>
 
             </div><!--content right-->
         </div><!--main_box-->
 
-        <footer class="foot-box">
-            footer
-        </footer><!--footer-->
+
 
         <script>
+            //切换图表
+                var items = document.querySelectorAll('.box');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].dataset.order = i;
+                }
+                function choose(clickIndex) {
+                    //获取当前显示的元素
+                    var activeItem = document.querySelector('.activ');
+                    //获取当前显示元素的data-order
+                    var activeIndex = activeItem.dataset.order;
+                    //获取当前点击元素
+                    var clickItem = items[clickIndex - 1];
+
+                    //判断当前点击的元素的id和当前显示元素的data-order是否相等
+                    if (activeIndex === clickIndex) {
+                        return
+                    }
+                    //更换样式
+                    activeItem.classList.remove('activ');
+                    clickItem.classList.add('activ');
+                    _setStyle(clickItem, activeItem)
+                    return false
+                }
+                function _setStyle(el1, el2) {
+                    //更换transform样式
+                    var transform1 = el1.style.transform;
+                    var transform2 = el2.style.transform;
+                    el1.style.transform = transform2;
+                    el2.style.transform = transform1;
+                }
+
+
+
+
             // 基于准备好的dom，初始化echarts实例
             var myChart = echarts.init(document.getElementById('mainONE'));
             var myChart02 = echarts.init(document.getElementById('mainTWO'));
@@ -277,7 +249,7 @@
                     axisPointer: {
                         type: 'cross',
                         crossStyle: {
-                            color: '#999'
+                            color: '#fff'
                         }
                     }
                 },
@@ -293,7 +265,7 @@
                     containLabel:true
                 },
                 legend: {
-                    data:['项目新增项目合同总额','结转项目收费总额','新增目收费总额']
+                    data:['2017年项目新增项目合同总额','2017年结转项目收费总额','2017年新增目收费总额']
                 },
                 xAxis: [
                     {
@@ -321,20 +293,36 @@
                     }
                 ],
                 series: [
+
                     {
-                        name:'项目新增项目合同总额',
+                        name:'2017年项目新增项目合同总额',
                         type:'bar',
-                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
+                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     },
                     {
-                        name:'结转项目收费总额',
+                        name:'2017年结转项目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     },
                     {
-                        name:'新增目收费总额',
+                        name:'2017年新增目收费总额',
                         type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3]
+                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        normal: {
+                            textStyle: {
+                                color: 'rgba(255, 255, 255, .5)'
+                            }
+                        }
                     }
                 ]
             };
@@ -489,7 +477,7 @@
                 ]
             };
 
-            var obj=$.ajax({url:"./json/chatPieBg.json",async:false});
+            var obj=$.ajax({url:"../json/chatPieBg.json",async:false});
             var bg=JSON.parse(obj.responseText).bg
             var piePatternSrc=bg.piePatternSrc;
             var bgPatternSrc=bg.bgPatternSrc;
@@ -516,7 +504,7 @@
             };
             var option05 = {
                 backgroundColor: {
-                    //image: bgPatternImg,
+                    image: bgPatternImg,
                     repeat: 'repeat'
                 },
                 title: {
@@ -524,7 +512,7 @@
                     textStyle: {
                         color: '#235894'
                     },
-                    //  x:'center'
+                    x:'center'
                 },
                 tooltip: {
                     trigger: 'item',
@@ -538,7 +526,7 @@
                     clockwise: true,
                     label: {
                         normal: {
-                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
                             backgroundColor: '#eee',
                             borderColor: '#aaa',
                             borderWidth: 1,
@@ -558,12 +546,7 @@
                                 },
                                 b: {
                                     fontSize: 16,
-                                    lineHeight: 20,
-                                    align: 'center'
-                                },
-                                c:{
-                                    fontSize: 16,
-                                    lineHeight: 24
+                                    lineHeight: 33
                                 },
                                 per: {
                                     color: '#eee',
@@ -583,7 +566,7 @@
                     },
                     data:[
                         {value:335, name:'已收'},
-                        {value:300, name:'未收'},
+                        {value:30, name:'未收'},
                     ],
                     itemStyle: itemStyle
                 }]
@@ -591,15 +574,15 @@
 
             var option06 = {
                 backgroundColor: {
-                    // image: bgPatternImg,
+                    image: bgPatternImg,
                     repeat: 'repeat'
                 },
                 title: {
                     text: '项目收费比例',
                     textStyle: {
-                        color: '#235894',
-                        lineHeight:40
-                    }
+                        color: '#235894'
+                    },
+                    x:'center'
                 },
                 tooltip: {
                     trigger: 'item',
@@ -613,7 +596,7 @@
                     clockwise: true,
                     label: {
                         normal: {
-                            formatter: ' {b|{b}：}\n{hr|}\n {c|{c}}  {per|{d}%}  ',
+                            formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
                             backgroundColor: '#eee',
                             borderColor: '#aaa',
                             borderWidth: 1,
@@ -633,12 +616,7 @@
                                 },
                                 b: {
                                     fontSize: 16,
-                                    lineHeight: 20,
-                                    align: 'center'
-                                },
-                                c:{
-                                    fontSize: 16,
-                                    lineHeight: 24
+                                    lineHeight: 33
                                 },
                                 per: {
                                     color: '#eee',
